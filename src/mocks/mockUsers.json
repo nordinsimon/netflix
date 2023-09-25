@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Simon",
+      "password": "123",
+      "token": "SimonToken"
+    },
+    {
+      "id": 2,
+      "name": "Björn",
+      "password": "123",
+      "token": "BjörnToken"
+    },
+    {
+      "id": 3,
+      "name": "Lovisa",
+      "password": "123",
+      "token": "LovisaToken"
+    },
+    {
+      "id": 4,
+      "name": "Maximus",
+      "password": "123",
+      "token": "MaximusToken"
+    },
+    {
+      "id": 5,
+      "name": "Goran",
+      "password": "123",
+      "token": "GoranToken"
+    }
+  ]
+}
