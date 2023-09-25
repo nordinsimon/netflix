@@ -7,17 +7,36 @@ export const handlers = [
     const user = mockUsers.users.find(
       (user) => user.name === username && user.password === password
     );
-
     if (user) {
       return res(
         ctx.status(200),
         ctx.json({
-          username: user.username,
+          token: user.token,
         })
       );
     } else {
       return res(
-        ctx.status(403),
+        ctx.status(401),
+        ctx.json({
+          errorMessage: "Not authorized",
+        })
+      );
+    }
+  }),
+
+  rest.post("/auth", (req, res, ctx) => {
+    const { token } = req.body;
+    const user = mockUsers.users.find((user) => user.token.token === token);
+    if (user) {
+      return res(
+        ctx.status(200),
+        ctx.json({
+          token: user.token,
+        })
+      );
+    } else {
+      return res(
+        ctx.status(401),
         ctx.json({
           errorMessage: "Not authorized",
         })

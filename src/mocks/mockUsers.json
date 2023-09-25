@@ -4,31 +4,46 @@
       "id": 1,
       "name": "Simon",
       "password": "123",
-      "token": "SimonToken"
+      "token": {
+        "token": "SimonToken",
+        "name": "Simon"
+      }
     },
     {
       "id": 2,
       "name": "Björn",
       "password": "123",
-      "token": "BjörnToken"
+      "token": {
+        "token": "BjörnToken",
+        "name": "Björn"
+      }
     },
     {
       "id": 3,
       "name": "Lovisa",
       "password": "123",
-      "token": "LovisaToken"
+      "token": {
+        "token": "LovisaToken",
+        "name": "Lovisa"
+      }
     },
     {
       "id": 4,
       "name": "Maximus",
       "password": "123",
-      "token": "MaximusToken"
+      "token": {
+        "token": "MaximusToken",
+        "name": "Maximus"
+      }
     },
     {
       "id": 5,
       "name": "Goran",
       "password": "123",
-      "token": "GoranToken"
+      "token": {
+        "token": "GoranToken",
+        "name": "Goran"
+      }
     }
   ]
 }
