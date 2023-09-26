@@ -1,6 +1,7 @@
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
+
+import login from "../../auth/login";
 
 import "./LoginPage.css";
 
@@ -11,16 +12,9 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const res = await fetch("/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    });
-
-    if (res.ok) {
-      navigate("/home");
+    const result = await login(username, password);
+    if (result) {
+      navigate("/");
     }
   };
 
