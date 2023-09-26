@@ -1,0 +1,40 @@
+.container {
+    background-color: #141414; 
+    color: #e0e0e0; 
+    max-width: 800px; 
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  /* Movie Title Styles */
+  .container h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Image Styles */
+  .container img {
+    max-width: 100%; 
+    max-height: 40vh; 
+    display: block; 
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+  
+  /* Paragraph Styles */
+  .container p {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  
+  /* Actor List Styles */
+  .container .actors {
+    list-style-type: none; 
+    padding: 0;
+  }
+  
+  .container .actors li {
+    display: inline-block;
+    margin-right: 10px;
+  }
