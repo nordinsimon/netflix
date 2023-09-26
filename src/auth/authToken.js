@@ -2,6 +2,10 @@ import Cookies from "js-cookie";
 
 const authToken = async () => {
   const token = Cookies.get("token");
+  //checks if token exist already
+  if(token){
+    return true;
+  }
   const res = await fetch("/auth", {
     method: "POST",
     headers: {
