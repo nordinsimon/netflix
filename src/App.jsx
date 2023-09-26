@@ -7,8 +7,6 @@ import CategoriesPage from "./pages/categories/CategoriesPage";
 import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
 
-import "./App.css";
-
 function App() {
   return (
     <>
