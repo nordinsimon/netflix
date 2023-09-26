@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import AllContext from "../../context/context";
-import Navbar from "../../../components/navbar";
-
+import Navbar from "../../../components/Navbar";
 import logout from "../../auth/logout";
 
 const HomePage = () => {
@@ -12,6 +11,8 @@ const HomePage = () => {
       <Navbar/>
     </div>
   );
+    
+
 };
 
 export default HomePage;
