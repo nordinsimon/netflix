@@ -1,0 +1,34 @@
+.carousel-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.carousel {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+
+.carousel.item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.carousel-item button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.carousel-item button:hover {
+  background-color: #0056b3;
+  
+}
+
+
