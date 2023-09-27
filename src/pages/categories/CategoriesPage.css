@@ -1,4 +1,4 @@
-.carousel-container {
+/* .carousel-container {
   overflow-x: auto;
   white-space: nowrap;
   border: 1px solid #ccc;
@@ -18,17 +18,16 @@ margin: 0;
 }
 
 .carousel-item button {
-  background-color: #007bff;
   color: #fff;
   padding: 5px 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
 
-.carousel-item button:hover {
+/* .carousel-item button:hover {
   background-color: #0056b3;
   
-}
+} */
 
 

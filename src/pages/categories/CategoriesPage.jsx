@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import AllContext from "../../context/context";
 import moviesData from "../../../movies.json";
-import "./CategoriesPage.css";
+import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+
+// import Navbar from "../../../components/Navbar";
 
 const CategoriesPage = () => {
   const [bookmarks, setBookmarks, movies] = useContext(AllContext);
@@ -23,24 +25,30 @@ const CategoriesPage = () => {
 
   return (
     <div>
-      <h1>Categories</h1>
-      <div className="carousel-container">
-        <ul className="carousel">
+      <h1 className="text-white flex justify-center">Categories</h1>
+      <div className="overflow-x-auto">
+        <ul className="flex space-x-8 p-8 justify-center">
           {uniqueGenres.map((genre, index) => (
-            <li key={index} className="carousel-item">
+            <li className="text-white" key={index}>
               <button onClick={() => handleGenreClick(genre)}>{genre}</button>
             </li>
           ))}
         </ul>
       </div>
       <h2>{selectedGenre ? `Movies in ${selectedGenre}` : "All Movies"}</h2>
-      <ul>
-        {filteredMovies.map((movie, index) => (
-          <li key={index}>
-            <img src={movie.thumbnail} alt={movie.title} />
-          </li>
-        ))}
-      </ul>
+      <div className="overflow-x-scroll">
+        <ul className="flex space-x-4 p-4">
+          {filteredMovies.map((movie, index) => (
+            <li key={index} className="w-64 h-64">
+              <img
+                className="w-full h-full object-cover rounded-lg shadow-md scroll-smooth"
+                src={movie.thumbnail}
+                alt={movie.title}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
