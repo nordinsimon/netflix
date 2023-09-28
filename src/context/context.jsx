@@ -32,9 +32,10 @@ export const AllContext = createContext();
 export const AllContextProvider = ({ children }) => {
   const [movies, setMovies] = useState(file);
   const [bookmarks, setBookmarks] = useState(exampleFavoutites);
+  const [activeMovie, setActiveMovie] = useState({})
 
   return (
-    <AllContext.Provider value={[bookmarks, setBookmarks, movies, setMovies]}>
+    <AllContext.Provider value={[bookmarks, setBookmarks, movies, setMovies, activeMovie, setActiveMovie]}>
       {children}
     </AllContext.Provider>
   );

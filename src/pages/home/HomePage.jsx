@@ -4,10 +4,10 @@ import Navbar from "../../../components/Navbar";
 
 const HomePage = () => {
 
-  const [bookmarks, setBookmarks, movies] = useContext(AllContext);
+  const [bookmarks, setBookmarks, movies, setActiveMovie] = useContext(AllContext);
   return (
     <div>
-      <Navbar/>
+      <Navbar movies={movies}/>
     </div>
   );
     
