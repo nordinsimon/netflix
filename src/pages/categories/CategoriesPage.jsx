@@ -1,16 +1,20 @@
 import { useContext, useState } from "react";
 import AllContext from "../../context/context";
-import moviesData from "../../../movies.json";
+// import movies from "../../../movies.json";
 
 // import Navbar from "../../../components/Navbar";
 
 const CategoriesPage = () => {
-  const [bookmarks, setBookmarks, movies] = useContext(AllContext);
+  // eslint-disable-next-line no-unused-vars
+  const [bookmarks, setBookmarks, _movies] = useContext(AllContext) || [];
+  const movies = _movies || [];
   const [selectedGenre, setSelectedGenre] = useState(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const allGenres = moviesData.map((movie) => movie.genre);
+  // hämta movies från context istället, hur?
+  // lägga till states i AllContextProvider och returnen som value?
+  const allGenres = movies.map((movie) => movie.genre);
   const genreWords = allGenres.flatMap((genreString) => genreString.split(","));
   const cleanedGenres = genreWords.map((genre) => genre.trim());
   const uniqueGenres = [...new Set(cleanedGenres)];
@@ -48,7 +52,7 @@ const CategoriesPage = () => {
     <div>
       <h1 className="text-white flex justify-center">Categories</h1>
       <div className="overflow-x-auto">
-        <ul className="flex space-x-8 p-8 justify-center">
+        <ul className="flex space-x-8 p-8 justify-center ml-20 mr-20">
           {uniqueGenres.map((genre, index) => (
             <li className="text-white" key={index}>
               <button onClick={() => handleGenreClick(genre)}>{genre}</button>
@@ -70,14 +74,14 @@ const CategoriesPage = () => {
                 <button
                   onClick={prevSlide}
                   className={`${
-                    currentIndex === 0 ? "invinsible" : "visible"
+                    currentIndex === 0 ? "invisible" : "visible"
                   } bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors duration-300 cursor-pointer`}
                 >
                   <svg className="h-6 w-6 transform rotate-180" fill="white">
                     <polygon points="22 12 9 5 9 18 22 12" />
                   </svg>
                 </button>
-                <buton
+                <button
                   onClick={nextSlide}
                   className={`${
                     currentIndex + moviesPerPage >= filteredMovies.length
@@ -88,35 +92,11 @@ const CategoriesPage = () => {
                   <svg className="h-6 w-6" fill="white">
                     <polygon points="22 12 9 5 9 18 22 12" />
                   </svg>
-                </buton>
+                </button>
               </div>
             </li>
           ))}
         </ul>
-        {/* <div className="flex justify-between mt-4">
-          <button
-            onClick={prevSlide}
-            className={`${
-              currentIndex === 0 ? "invinsible" : "visible"
-            } bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors duration-300 cursor-pointer`}
-          >
-            <svg className="h-6 w-6 transform rotate-180" fill="white">
-              <polygon points="22 12 9 5 9 18 22 12" />
-            </svg>
-          </button>
-          <buton
-            onClick={nextSlide}
-            className={`${
-              currentIndex + moviesPerPage >= filteredMovies.length
-                ? "invisible"
-                : "visible"
-            } bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors duration-300 cursor-pointer`}
-          >
-            <svg className="h-6 w-6" fill="white">
-              <polygon points="22 12 9 5 9 18 22 12" />
-            </svg>
-          </buton>
-        </div> */}
       </div>
     </div>
   );
