@@ -6,6 +6,7 @@ import HomePage from "./pages/home/HomePage";
 import CategoriesPage from "./pages/categories/CategoriesPage";
 import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
+import authToken from "./auth/authToken";
 
 import authToken from "./auth/authToken";
 

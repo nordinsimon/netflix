@@ -1,13 +1,15 @@
 import { useContext } from "react";
 import AllContext from "../../context/context";
+import Navbar from "../../../components/Navbar";
 
 import logout from "../../auth/logout";
 
 const HomePage = () => {
-  const [bookmarks, setBookmarks, movies] = useContext(AllContext);
+
+  const [bookmarks, setBookmarks, movies, setActiveMovie] = useContext(AllContext);
   return (
     <div>
-      <button onClick={logout}>Logout</button>
+      <Navbar movies={movies}/>
     </div>
   );
 };

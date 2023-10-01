@@ -1,0 +1,47 @@
+
+li{
+    list-style: none;
+    font-family: lato, sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+#nav{
+    display: flex;
+    justify-content: space-between
+}
+
+#left{
+    display: inline-flex;
+}
+
+#left li, #right li{
+    margin-right: 20%;
+    cursor: pointer;
+}
+
+#right{
+    display: inline-flex;
+    margin-right: 15%;
+}
+   
+#circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: rgb(91, 91, 91);
+    background-image: url('../src/assets/icons8-search-50.png');
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    
+}
+
+#bookmark{
+    padding-top: 2px;
+}
+
+.cls-1 {
+      stroke-miterlimit: 10;
+      stroke-width: .5px;
+    }
