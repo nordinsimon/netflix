@@ -1,6 +1,7 @@
 import{ useState, useEffect } from "react";
 import './Trending.css'
 import next from '../src/assets/next.png'
+import { useNavigate } from "react-router-dom";
 
 const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
     const trendingMovies = movies.filter((movie) => movie.isTrending === true && movie.thumbnail !== undefined);
@@ -8,6 +9,8 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
     const [index, setIndex] = useState(0);
     const length = trending.length;
     const [hover, setHover] = useState(null)
+
+    const navigate = useNavigate()
 
     const reorderMovies = (currentIndex) => {
         const slicedMovies = trendingMovies.slice(currentIndex);
@@ -43,8 +46,11 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
     } else {
         setBookmarks([...bookmarks, movie]);
     }
-    
-    console.log(bookmarks);
+    }
+
+    const pickMovie = (activeMovie) => {
+        setActiveMovie(activeMovie)
+       navigate('/filmView')
     }
 
     return (
@@ -56,7 +62,7 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
             <ul className="carousel">
             {reorderedTrendingMovies.map((movie, movieIndex) => (
                     <li className='trendingMovies' key={movieIndex} style={{backgroundImage: movie.thumbnail}}onMouseOver={() => setHover(movieIndex)}onMouseLeave={() => setHover(null)} >
-                        <img className="movie" src={movie.thumbnail} alt={`Movie ${movieIndex}`}   />
+                        <img className="movie" src={movie.thumbnail} alt={`Movie ${movieIndex}`} onClick={() => pickMovie(movie)}  />
                         {hover === movieIndex && <div className="movieInfo">
                             <div onClick={() => handleBookmark(movie)}>
                              <svg id="lager-1" data-name="Lager 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.42 7.76" width="23" height="22">

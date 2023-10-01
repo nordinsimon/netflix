@@ -5,15 +5,14 @@ import Trending from "../../../components/Trending";
 import './Homepage.css'
 
 const HomePage = () => {
-
   const [bookmarks, setBookmarks, movies, setActiveMovie] = useContext(AllContext);
+
   return (
     <div id="homepage">
       <Navbar movies={movies}/>
       <Trending movies={movies} setBookmarks={setBookmarks} bookmarks={bookmarks} setActiveMovie={setActiveMovie}/>
     </div>
   );
-    
 
 };
 

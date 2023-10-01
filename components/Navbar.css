@@ -37,11 +37,30 @@ font-style: normal;
     
 }
 
+#logoutCircle{
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: rgb(91, 91, 91);
+    background-image: url('../src/assets/logout-24.png');
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}
+
 #bookmark{
-    padding-top: 2px;
+    width: 25px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: rgb(91, 91, 91);
 }
 
 .cls-1 {
       stroke-miterlimit: 10;
       stroke-width: .5px;
     }
+
+#bookmarkcontainer{
+    margin-top: 4px;
+   transform: translateX(7px);
+}

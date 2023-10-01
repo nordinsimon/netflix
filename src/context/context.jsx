@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 import file from "../../movies.json";
 
@@ -30,9 +30,14 @@ const exampleFavoutites = [
 export const AllContext = createContext();
 
 export const AllContextProvider = ({ children }) => {
-  const [movies, setMovies] = useState(file);
+  const [movies, setMovies] = useState([]);
   const [bookmarks, setBookmarks] = useState(exampleFavoutites);
   const [activeMovie, setActiveMovie] = useState({})
+
+  //movies disappeared otherwise
+  useEffect(()=> {
+    setMovies(file)
+  },[movies, setMovies])
 
   return (
     <AllContext.Provider value={[bookmarks, setBookmarks, movies, setMovies, activeMovie, setActiveMovie]}>
