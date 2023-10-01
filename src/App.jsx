@@ -8,6 +8,8 @@ import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
 import authToken from "./auth/authToken";
 
+import authToken from "./auth/authToken";
+
 import "./App.css";
 
 function App() {

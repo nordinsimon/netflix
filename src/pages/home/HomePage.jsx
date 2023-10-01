@@ -4,6 +4,8 @@ import Navbar from "../../../components/Navbar";
 import Trending from "../../../components/Trending";
 import './Homepage.css'
 
+import logout from "../../auth/logout";
+
 const HomePage = () => {
   const [bookmarks, setBookmarks, movies, setActiveMovie] = useContext(AllContext);
 
@@ -13,7 +15,6 @@ const HomePage = () => {
       <Trending movies={movies} setBookmarks={setBookmarks} bookmarks={bookmarks} setActiveMovie={setActiveMovie}/>
     </div>
   );
-
 };
 
 export default HomePage;
