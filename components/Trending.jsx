@@ -4,7 +4,7 @@ import next from '../src/assets/next.png'
 import { useNavigate } from "react-router-dom";
 
 const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
-    const trendingMovies = movies.filter((movie) => movie.isTrending === true && movie.thumbnail !== undefined);
+    let trendingMovies = movies.filter((movie) => movie.isTrending === true && movie.thumbnail !== undefined);
     const [trending, setTrending] = useState(trendingMovies);
     const [index, setIndex] = useState(0);
     const length = trending.length;
@@ -12,19 +12,21 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
 
     const navigate = useNavigate()
 
+        useEffect(() => {
+            if (index < 0) {
+              setIndex(length - 1);
+            } else if (index >= length) {
+              setIndex(0);
+            }
+
+           
+          }, [index, length]);
+
     const reorderMovies = (currentIndex) => {
         const slicedMovies = trendingMovies.slice(currentIndex);
         const reorderedMovies = [...slicedMovies, ...trendingMovies.slice(0, currentIndex)];
         return reorderedMovies;
     };
-
-    useEffect(() => {
-        if (index < 0) {
-            setIndex(length - 1);
-        } else if (index >= length) {
-            setIndex(0);
-        }
-    }, [index, length]);
 
     const nextSlide = () => {
         setIndex((index + 1) % length);
