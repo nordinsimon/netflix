@@ -12,6 +12,13 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
 
     const navigate = useNavigate()
 
+       // to make carousel work when reloading page
+       useEffect(() => {
+        const filteredMovies = movies.filter((movie) => movie.isTrending === true && movie.thumbnail !== undefined);
+        setTrending(filteredMovies);
+    }, [movies]);
+    
+
         useEffect(() => {
             if (index < 0) {
               setIndex(length - 1);
