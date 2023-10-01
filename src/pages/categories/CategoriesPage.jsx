@@ -4,6 +4,8 @@ import AllContext from "../../context/context";
 
 // import Navbar from "../../../components/Navbar";
 
+import "./CategoriesPage.css";
+
 const CategoriesPage = () => {
   // eslint-disable-next-line no-unused-vars
   const [bookmarks, setBookmarks, _movies] = useContext(AllContext) || [];
