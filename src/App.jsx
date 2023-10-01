@@ -8,7 +8,7 @@ import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
 import authToken from "./auth/authToken";
 
-import "./App.css";
+// import "./App.css";
 
 function App() {
   const navigate = useNavigate();
