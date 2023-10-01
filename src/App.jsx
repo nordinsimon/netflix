@@ -8,16 +8,14 @@ import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
 import authToken from "./auth/authToken";
 
-import authToken from "./auth/authToken";
-
 import "./App.css";
 
 function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const redirectIfNotAuthenticated = async () => {
-      const result = await authToken();
+    const redirectIfNotAuthenticated = () => {
+      const result = authToken();
       console.log("result", result);
       if (!result) {
         navigate("/login");
