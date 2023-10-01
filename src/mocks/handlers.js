@@ -20,7 +20,7 @@ export const loginMock = ({ username, password }) => {
   }
 };
 
-export const authTokenMock = ({ token }) => {
+export const authTokenMock = (token) => {
   const user = mockUsers.users.find((user) => user.token.token === token);
   if (user) {
     return {
