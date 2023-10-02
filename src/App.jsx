@@ -1,4 +1,10 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import {
+  Routes,
+  Route,
+  useNavigate,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import { useEffect } from "react";
 
 import LoginPage from "./pages/login/LoginPage";
@@ -12,17 +18,21 @@ import authToken from "./auth/authToken";
 
 function App() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const redirectIfNotAuthenticated = () => {
       const result = authToken();
       console.log("result", result);
-      if (!result) {
+
+      if (result !== true) {
         navigate("/login");
+      } else if (result === true && location.pathname === "/login") {
+        navigate("/");
       }
     };
     redirectIfNotAuthenticated();
-  }, [navigate]);
+  }, [navigate, location.pathname]);
   return (
     <>
       <Routes>
@@ -31,6 +41,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />}></Route>
         <Route path="/bookmark" element={<BookmarkPage />}></Route>
         <Route path="/filmView" element={<FilmViewPage />}></Route>
+        <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </>
   );
