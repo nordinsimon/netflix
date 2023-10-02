@@ -2,9 +2,7 @@ import { useContext } from "react";
 import AllContext from "../../context/context";
 import Navbar from "../../../components/Navbar";
 import Trending from "../../../components/Trending";
-import "./Homepage.css";
-
-//import logout from "../../auth/logout";
+import './Homepage.css';
 
 const HomePage = () => {
   const { bookmarks, setBookmarks, movies, setActiveMovie } =
