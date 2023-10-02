@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AllContext from "../../context/context";
 import Navbar from "../../../components/Navbar";
 import Trending from "../../../components/Trending";
-import './Homepage.css';
+import "./Homepage.css";
 import Recommended from "../../../components/Recommended";
 
 const HomePage = () => {
