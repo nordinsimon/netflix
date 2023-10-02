@@ -57,7 +57,7 @@ const Bookmarked = () => {
           />
         )}
         
-        <ul className="carousel">
+        <ul className="carousel_Bookmark">
           {bookmarks.map((movie, movieIndex) => (
             <li
               className="bookmarkMovies"
