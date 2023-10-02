@@ -8,8 +8,7 @@ import "./CategoriesPage.css";
 
 const CategoriesPage = () => {
   // eslint-disable-next-line no-unused-vars
-  const [bookmarks, setBookmarks, _movies] = useContext(AllContext) || [];
-  const movies = _movies || [];
+  const { bookmarks, setBookmarks, movies } = useContext(AllContext);
   const [selectedGenre, setSelectedGenre] = useState(null);
 
   const [currentIndex, setCurrentIndex] = useState(0);

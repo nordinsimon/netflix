@@ -14,7 +14,6 @@ export const LoginPage = () => {
 
   const handleLogin = async () => {
     const result = await login(username, password);
-    console.log("result", result);
     if (result) {
       navigate("/");
     }
