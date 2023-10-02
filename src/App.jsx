@@ -23,7 +23,6 @@ function App() {
   useEffect(() => {
     const redirectIfNotAuthenticated = () => {
       const result = authToken();
-      console.log("result", result);
 
       if (result !== true) {
         navigate("/login");

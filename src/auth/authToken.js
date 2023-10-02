@@ -6,7 +6,6 @@ const authToken = () => {
   const token = Cookies.get("token");
   //checks if token exist already
   if (token) {
-    console.log("token", token);
     const res = authTokenMock(token);
     if (res.status === 200) {
       const data = res;
