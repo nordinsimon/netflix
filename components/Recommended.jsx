@@ -1,53 +1,47 @@
 import { useState, useEffect } from "react";
-import "./Trending.css";
-import next from "../src/assets/next.png";
 import { useNavigate } from "react-router-dom";
+import next from "../src/assets/next.png";
+import "./Trending.css";
 
-const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
-  let trendingMovies = movies.filter(
-    (movie) => movie.isTrending === true && movie.thumbnail !== undefined,
-  );
-  const [trending, setTrending] = useState(trendingMovies);
+const Recommended = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
+  const [recommended, setRecommended] = useState([]);
   const [index, setIndex] = useState(0);
-  const length = trending.length;
-  const [hover, setHover] = useState(null);
+  const length = recommended.length;
 
-  const navigate = useNavigate();
+  const shuffleArray = (array) => {
+    const shuffledArray = [...array];
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
+    return shuffledArray;
+  };
 
-  // to make carousel work when reloading page
   useEffect(() => {
-    const filteredMovies = movies.filter(
-      (movie) => movie.isTrending === true && movie.thumbnail !== undefined,
-    );
-    setTrending(filteredMovies);
+    if (movies.length > 0) {
+      const shuffledMovies = shuffleArray(movies);
+      const filteredMovies = shuffledMovies.filter(
+        (movie) => !movie.isTrending,
+      );
+      const limitedRecommended = filteredMovies.slice(0, 10);
+      setRecommended(limitedRecommended);
+    }
   }, [movies]);
 
-  useEffect(() => {
-    if (index < 0) {
-      setIndex(length - 1);
-    } else if (index >= length) {
-      setIndex(0);
-    }
-  }, [index, length]);
+  const [hover, setHover] = useState(null);
+  const navigate = useNavigate();
 
   const reorderMovies = (currentIndex) => {
-    const slicedMovies = trendingMovies.slice(currentIndex);
+    const slicedMovies = recommended.slice(currentIndex);
     const reorderedMovies = [
       ...slicedMovies,
-      ...trendingMovies.slice(0, currentIndex),
+      ...recommended.slice(0, currentIndex),
     ];
     return reorderedMovies;
   };
-
-  const nextSlide = () => {
-    setIndex((index + 1) % length);
-  };
-
-  const prevSlide = () => {
-    setIndex((index - 1 + length) % length);
-  };
-
-  const reorderedTrendingMovies = reorderMovies(index);
 
   const handleBookmark = (movie) => {
     const duplicate = bookmarks.find((film) => film.title === movie.title);
@@ -66,9 +60,18 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
     navigate("/filmView");
   };
 
+  const nextSlide = () => {
+    setIndex((index + 1) % length);
+  };
+
+  const prevSlide = () => {
+    setIndex((index - 1 + length) % length);
+  };
+  const reorderedReccMovies = reorderMovies(index);
+
   return (
     <div>
-      <h4>Trending</h4>
+      <h4>Recommended</h4>
       <div className="what">
         <img
           style={{ width: "auto", height: "100%", marginTop: 100 }}
@@ -78,22 +81,22 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
         ></img>
 
         <ul className="carousel">
-          {reorderedTrendingMovies.map((movie, movieIndex) => (
+          {reorderedReccMovies.map((movie, index) => (
             <li
               className="trendingMovies"
-              key={movieIndex}
+              key={index}
               style={{ backgroundImage: movie.thumbnail }}
-              onMouseOver={() => setHover(movieIndex)}
+              onMouseOver={() => setHover(index)}
               onMouseLeave={() => setHover(null)}
             >
               <img
                 className="movie"
                 src={movie.thumbnail}
-                alt={`Movie ${movieIndex}`}
+                alt={`Movie ${index}`}
                 onClick={() => pickMovie(movie)}
               />
-              {hover === movieIndex && (
-                <div className="movieInfo">
+              {hover === index && (
+                <div className="movieInfo2">
                   <div onClick={() => handleBookmark(movie)}>
                     <svg
                       id="lager-1"
@@ -133,4 +136,4 @@ const Trending = ({ movies, setBookmarks, bookmarks, setActiveMovie }) => {
   );
 };
 
-export default Trending;
+export default Recommended;
