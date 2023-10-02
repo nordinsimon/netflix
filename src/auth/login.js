@@ -5,7 +5,6 @@ import { loginMock } from "../mocks/handlers";
 const login = (name, password) => {
   const user = { username: name, password: password };
   const res = loginMock(user);
-  console.log("res", res);
 
   if (res.status === 200) {
     const data = res;
