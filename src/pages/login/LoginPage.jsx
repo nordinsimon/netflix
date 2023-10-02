@@ -8,13 +8,23 @@ import "./LoginPage.css";
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [unathorised, setUnathorised] = useState(false);
 
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     const result = await login(username, password);
+    console.log("result", result);
     if (result) {
       navigate("/");
+    }
+    setUnathorised(true);
+    setPassword("");
+  };
+  const handleKeyPress = (event) => {
+    setUnathorised(false);
+    if (event.key === "Enter") {
+      handleLogin();
     }
   };
 
@@ -26,13 +36,17 @@ export const LoginPage = () => {
           type="text"
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
+          value={username}
         />
         <input
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          onKeyUp={handleKeyPress}
         />
       </div>
+      {unathorised ? <p>Wrong username or password</p> : null}
       <button onClick={handleLogin}>Login</button>
     </div>
   );
