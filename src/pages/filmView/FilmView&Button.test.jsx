@@ -41,7 +41,6 @@ describe("FilmViewPage Component", () => {
         </AllContextProvider>
       </Router>,
     );
-    console.log(screen.debug());
     expect(
       screen.getByText("The Shawshank Redemption (1994)"),
     ).toBeInTheDocument();
