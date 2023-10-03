@@ -4,7 +4,7 @@ import next from "../src/assets/next.png";
 
 import AllContext from "../src/context/context";
 
-import "./Trending.css";
+import "./Slider.css";
 
 const Slider = ({ filmsToMap }) => {
   const { setBookmarks, bookmarks, setActiveMovie } = useContext(AllContext);
