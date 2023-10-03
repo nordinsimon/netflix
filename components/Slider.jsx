@@ -91,11 +91,21 @@ const Slider = ({ filmsToMap }) => {
                     height="22"
                   >
                     <path
-                      className={
-                        bookmarks.includes(movie) ? "activeBookmark" : "cls-1"
+                      className={"cls-1"}
+                      fill={
+                        bookmarks.some(
+                          (bookmark) => bookmark.title === movie.title,
+                        )
+                          ? "red"
+                          : "none"
                       }
-                      fill={bookmarks.includes(movie) ? "red" : "none"}
-                      stroke={bookmarks.includes(movie) ? "red" : "white"}
+                      stroke={
+                        bookmarks.some(
+                          (bookmark) => bookmark.title === movie.title,
+                        )
+                          ? "red"
+                          : "white"
+                      }
                       d="m.28.27c1.3,0,2.59-.01,3.89-.02v6.88l-1.96-2.08L.25,7.13c0-2.29.02-4.57.03-6.86Z"
                     ></path>{" "}
                   </svg>

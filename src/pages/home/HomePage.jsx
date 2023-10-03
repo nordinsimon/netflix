@@ -11,7 +11,7 @@ const HomePage = () => {
 
   return (
     <div id="homepage">
-      <Navbar movies={movies} />
+      <Navbar />
       <Trending
         movies={movies}
         setBookmarks={setBookmarks}
