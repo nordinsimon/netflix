@@ -67,7 +67,7 @@ const Slider = ({ filmsToMap }) => {
       <ul className="carousel">
         {reorderedMovies.map((movie, movieIndex) => (
           <li
-            className="trendingMovies"
+            className="slidingMovies"
             key={movieIndex}
             style={{ backgroundImage: movie.thumbnail }}
             onMouseOver={() => setHover(movieIndex)}

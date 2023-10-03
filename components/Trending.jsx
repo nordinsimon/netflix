@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import "./Trending.css";
 
 import Slider from "./Slider";
 
