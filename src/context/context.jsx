@@ -37,7 +37,25 @@ export const AllContextProvider = ({ children }) => {
   //movies disappeared otherwise
   useEffect(() => {
     setMovies(file);
-  }, [movies, setMovies]);
+
+    const localBookmarks = localStorage.getItem("bookmarks");
+    if (localBookmarks) {
+      setBookmarks(JSON.parse(localBookmarks));
+    }
+
+    const localActiveMovie = localStorage.getItem("activeMovie");
+    if (localActiveMovie) {
+      setActiveMovie(JSON.parse(localActiveMovie));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+  }, [bookmarks]);
+
+  useEffect(() => {
+    localStorage.setItem("activeMovie", JSON.stringify(activeMovie));
+  }, [activeMovie]);
 
   return (
     <AllContext.Provider

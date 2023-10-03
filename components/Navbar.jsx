@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SearchBar from "./SearchBar";
 
-const Navbar = ({ movies }) => {
+const Navbar = () => {
   const [searching, setSearching] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Navbar = ({ movies }) => {
   const svgStroke = isOnBookmarksPage ? "red" : "white";
 
   if (searching) {
-    return <SearchBar movies={movies} setSearching={setSearching} />;
+    return <SearchBar setSearching={setSearching} />;
   }
   return (
     <div id="nav">
