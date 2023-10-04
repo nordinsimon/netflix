@@ -17,7 +17,7 @@ const Trending = ({ movies }) => {
   }, [movies]);
 
   return (
-    <div>
+    <div data-testid="trending-section">
       <h4>Trending</h4>
       <Slider filmsToMap={trending} />
     </div>
