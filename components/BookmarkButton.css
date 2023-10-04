@@ -1,21 +1,20 @@
 .bookmark-button {
-    background-color: #ff0000; /* Red for Unbookmarked */
-    color: #ffffff; /* White Text */
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .bookmark-button.bookmarked {
-    background-color: #00ff00; /* Green for Bookmarked */
-  }
-  
-  .bookmark-button:hover {
-    background-color: #ff7f7f; /* Lighter Red for hover on Unbookmarked */
-  }
-  
-  .bookmark-button.bookmarked:hover {
-    background-color: #7fff7f; /* Lighter Green for hover on Bookmarked */
-  }
-  
+  background-color: #ff0000; /* Red for Unbookmarked */
+  color: #ffffff; /* White Text */
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bookmark-button.bookmarked {
+  background-color: #00ff00; /* Green for Bookmarked */
+}
+
+.bookmark-button:hover {
+  background-color: #ff7f7f; /* Lighter Red for hover on Unbookmarked */
+}
+
+.bookmark-button.bookmarked:hover {
+  background-color: #7fff7f; /* Lighter Green for hover on Bookmarked */
+}

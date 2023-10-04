@@ -63,3 +63,9 @@ li {
   margin-top: 4px;
   transform: translateX(7px);
 }
+
+@media screen and (max-width: 390px) {
+  #right {
+    margin-right: 20px;
+  }
+}

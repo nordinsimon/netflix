@@ -1,4 +1,5 @@
-import React, { useContext, useEffect } from "react";
+
+import { useContext } from "react";
 import AllContext from "../src/context/context";
 import "./BookmarkButton.css";
 
