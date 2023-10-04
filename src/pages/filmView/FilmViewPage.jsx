@@ -29,9 +29,10 @@ const FilmViewPage = () => {
   return (
     <div className="container">
       <Navbar />
-      <h1>
-        {activeMovie.title} ({activeMovie.year})
-      </h1>
+      <div>
+        <h2>{activeMovie.title}</h2>
+        <h6 className="year">{activeMovie.year}</h6>
+      </div>
       <img src={activeMovie.thumbnail} alt={`${activeMovie.title} Thumbnail`} />
       <div id="bookmarkBtn">
         <BookmarkButton movie={activeMovie} />
@@ -45,7 +46,7 @@ const FilmViewPage = () => {
         ))}
       </div>
       <p>
-        <strong>Actors:</strong>
+        <strong>Actors</strong>
       </p>
       <ul className="actors">
         {activeMovie.actors
@@ -53,8 +54,9 @@ const FilmViewPage = () => {
           : "No actors listed."}
       </ul>
       <p>
-        <strong>Synopsis:</strong> {activeMovie.synopsis}
+        <strong>Synopsis</strong>
       </p>
+      <p className="synopsis">{activeMovie.synopsis}</p>
     </div>
   );
 };

@@ -29,7 +29,7 @@ export const LoginPage = () => {
 
   return (
     <div className="container">
-      <h1>Netflix Login</h1>
+      <h2>Welcome back!</h2>
       <div className="input-container">
         <input
           type="text"
@@ -46,7 +46,9 @@ export const LoginPage = () => {
         />
       </div>
       {unathorised ? <p>Wrong username or password</p> : null}
-      <button onClick={handleLogin}>Login</button>
+      <button id="loginBtn" onClick={handleLogin}>
+        Login
+      </button>
     </div>
   );
 };

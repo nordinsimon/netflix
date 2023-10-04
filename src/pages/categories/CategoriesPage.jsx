@@ -31,7 +31,12 @@ const CategoriesPage = () => {
         <ul className="category">
           {uniqueGenres.map((genre, index) => (
             <li className="genres" key={index}>
-              <button onClick={() => handleGenreClick(genre)}>{genre}</button>
+              <button
+                className={genre === "Sci-Fi" ? "Sci-fiBtn" : "genre"}
+                onClick={() => handleGenreClick(genre)}
+              >
+                {genre}
+              </button>
             </li>
           ))}
         </ul>

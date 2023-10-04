@@ -7,10 +7,11 @@
   margin: auto;
   padding: 20px;
   border: none;
+  height: 100%;
 }
 
 /* Movie Title Styles */
-.container h1 {
+.container h2 {
   margin-bottom: 20px;
   font-family: lato, sans-serif;
   font-weight: 300;
@@ -44,6 +45,11 @@
 .container .actors li {
   display: inline-block;
   margin-right: 10px;
+  font-family: "circe", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 12px;
+  color: rgb(171, 171, 171);
 }
 
 @media screen and (max-width: 800px) {
@@ -113,8 +119,45 @@
   color: rgb(161, 2, 161);
 }
 
+.year {
+  font-family: "circe", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  margin-top: -10px;
+}
+
 #bookmarkBtn {
   float: right;
   margin-right: 8%;
   transform: translateY(34px);
+}
+
+@media screen and (max-width: 366px) {
+  #genres {
+    margin-top: 60px;
+    margin-left: 2%;
+  }
+  #bookmarkBtn {
+    float: left;
+    margin-left: 3%;
+  }
+  #ratingPG,
+  #ratingR,
+  #ratingPG13,
+  #noRating {
+    margin-right: 3%;
+  }
+}
+
+.container p {
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@media screen and (max-width: 284px) {
+  .container h2 {
+    font-size: 18px;
+  }
 }
