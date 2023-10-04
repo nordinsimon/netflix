@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Slider from "./Slider";
 
-const Recommended = ({ movies }) => {
+const Recommended = ({ movies, ...props }) => {
   const [recommended, setRecommended] = useState([]);
 
   const shuffleArray = (array) => {
@@ -29,7 +29,7 @@ const Recommended = ({ movies }) => {
   }, [movies]);
 
   return (
-    <div>
+    <div {...props}>
       <h4>Recommended</h4>
       <Slider filmsToMap={recommended} />
     </div>
