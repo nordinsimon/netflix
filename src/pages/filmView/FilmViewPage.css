@@ -117,6 +117,9 @@
   border: 1px solid purple;
   padding: 5px;
   color: rgb(161, 2, 161);
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .year {
@@ -147,6 +150,9 @@
   #ratingPG13,
   #noRating {
     margin-right: 3%;
+  }
+  .container {
+    margin-right: 30%;
   }
 }
 

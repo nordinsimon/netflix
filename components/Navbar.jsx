@@ -33,10 +33,10 @@ const Navbar = () => {
     <div id="nav">
       <ul id="left">
         <li onClick={() => navigate("/")}>
-          {screen < 370 ? <div id="homeCircle"></div> : "Home"}
+          {screen < 420 ? <div id="homeCircle"></div> : "Home"}
         </li>
         <li onClick={() => navigate("/categories")}>
-          {screen < 370 ? <div id="categoryCircle"></div> : "Category"}
+          {screen < 420 ? <div id="categoryCircle"></div> : "Category"}
         </li>
       </ul>
       <ul id="right">
