@@ -1,16 +1,21 @@
+@import url("https://use.typekit.net/dqq4keq.css");
+
 .container {
-  background-color: #141414;
+  background: linear-gradient(to right, #1a1a1a, rgb(44, 26, 48));
   color: #e0e0e0;
-  max-width: 800px;
+  width: 40vw;
   margin: auto;
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  border: none;
+  height: 100%;
 }
 
 /* Movie Title Styles */
-.container h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
+.container h2 {
+  margin-bottom: 20px;
+  font-family: lato, sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 /* Image Styles */
@@ -24,17 +29,141 @@
 
 /* Paragraph Styles */
 .container p {
-  font-size: 1em;
   margin-bottom: 10px;
+  /*width: 35vw;*/
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 /* Actor List Styles */
 .container .actors {
   list-style-type: none;
   padding: 0;
+  margin-left: 5%;
 }
 
 .container .actors li {
   display: inline-block;
   margin-right: 10px;
+  font-family: "circe", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 12px;
+  color: rgb(171, 171, 171);
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80vw;
+  }
+  .container p {
+    width: 70vw;
+  }
+}
+
+#ratingPG {
+  border: none;
+  padding: 4px;
+  margin-right: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: orange;
+  color: black;
+  display: inline-block;
+}
+#ratingR {
+  border: none;
+  padding: 4px;
+  margin-right: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: red;
+  color: black;
+  display: inline-block;
+}
+
+#ratingPG13 {
+  border: none;
+  padding: 4px;
+  margin-right: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: purple;
+  color: black;
+  display: inline-block;
+}
+
+#noRating {
+  border: none;
+  padding: 4px;
+  margin-right: 1%;
+  border-radius: 5px;
+  border: none;
+  background-color: grey;
+  color: black;
+  display: inline-block;
+}
+
+#genres {
+  margin-top: 20px;
+  margin-left: 5%;
+}
+
+.genre {
+  display: inline-block;
+  margin-right: 1%;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid purple;
+  padding: 5px;
+  color: rgb(161, 2, 161);
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.year {
+  font-family: "circe", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+  text-align: center;
+  margin-top: -10px;
+}
+
+#bookmarkBtn {
+  float: right;
+  margin-right: 8%;
+  transform: translateY(34px);
+}
+
+@media screen and (max-width: 366px) {
+  #genres {
+    margin-top: 60px;
+    margin-left: 2%;
+  }
+  #bookmarkBtn {
+    float: left;
+    margin-left: 3%;
+  }
+  #ratingPG,
+  #ratingR,
+  #ratingPG13,
+  #noRating {
+    margin-right: 3%;
+  }
+  .container {
+    margin-right: 30%;
+  }
+}
+
+.container p {
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+@media screen and (max-width: 284px) {
+  .container h2 {
+    font-size: 18px;
+  }
 }

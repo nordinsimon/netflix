@@ -30,22 +30,13 @@ h4 {
 
 .movieInfo {
   position: absolute;
-  margin-top: -140px;
-  width: 177px;
+  width: 26.2vh;
+  height: 150px;
   text-align: left;
   padding-left: 5px;
   background-color: rgba(0, 0, 0, 0.179);
   backdrop-filter: blur(10px);
-}
-
-.movieInfo2 {
-  position: absolute;
-  width: 177px;
-  text-align: left;
-  padding-left: 5px;
-  background-color: rgba(0, 0, 0, 0.179);
-  backdrop-filter: blur(10px);
-  bottom: -140px;
+  transform: translateY(-150px);
 }
 
 h5 {
@@ -55,6 +46,9 @@ h5 {
 
 h6 {
   padding-top: -20px;
+  font-family: "circe", sans-serif;
+  font-weight: 200;
+  font-style: italic;
 }
 
 .cls-1 {
@@ -67,4 +61,37 @@ h6 {
   margin-right: 10px;
   margin-bottom: -20px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 370px) {
+  .movie {
+    height: 30vh;
+  }
+  .carousel {
+    height: 30vh;
+  }
+  .movieInfo {
+    width: 19.7vh;
+  }
+  h5 {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .movie {
+    height: 20vh;
+  }
+  .carousel {
+    height: 20vh;
+  }
+  .movieInfo {
+    width: 14vh;
+  }
+  h6 {
+    font-size: 9px;
+  }
+  .movieInfo {
+    height: 50;
+  }
 }

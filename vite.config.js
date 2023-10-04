@@ -13,4 +13,15 @@ export default defineConfig({
     setupFiles: "./setupTest.js",
     css: true,
   },
+  overrides: [
+    {
+      files: ["**/*.test.tsx"],
+      env: { "jest/globals": true },
+      extends: ["plugin:jest/recommended"],
+      plugins: ["jest"],
+      rules: {
+        "@typescript-eslint/no-empty-function": "off",
+      },
+    },
+  ],
 });

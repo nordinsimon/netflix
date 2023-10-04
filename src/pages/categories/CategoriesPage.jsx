@@ -24,19 +24,24 @@ const CategoriesPage = () => {
     : movies;
 
   return (
-    <div>
+    <div className="homepage">
       <Navbar />
       <h4>Categories</h4>
-      <div className="">
-        <ul className="">
+      <div className="categories">
+        <ul className="category">
           {uniqueGenres.map((genre, index) => (
-            <li className="" key={index}>
-              <button onClick={() => handleGenreClick(genre)}>{genre}</button>
+            <li className="genres" key={index}>
+              <button
+                className={genre === "Sci-Fi" ? "Sci-fiBtn" : "genre"}
+                onClick={() => handleGenreClick(genre)}
+              >
+                {genre}
+              </button>
             </li>
           ))}
         </ul>
       </div>
-      <h2>{selectedGenre ? `Movies in ${selectedGenre}` : "All Movies"}</h2>
+      <h4>{selectedGenre ? `Movies in ${selectedGenre}` : "All Movies"}</h4>
       <Slider filmsToMap={filteredMovies} />
     </div>
   );

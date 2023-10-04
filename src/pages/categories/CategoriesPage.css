@@ -1,0 +1,43 @@
+.genres {
+  display: inline-table;
+  margin-right: 10px;
+}
+.homepage {
+  background-color: rgb(18, 18, 18);
+  border-radius: 30px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background: linear-gradient(to right, #1a1a1a, rgb(44, 26, 48));
+}
+
+.categories {
+  align-content: center;
+  margin-left: 7%;
+}
+
+@media screen and (max-width: 370px) {
+  .categories {
+    margin-left: 0%;
+  }
+}
+
+.genres button:hover,
+.Sci-fiBtn:hover {
+  color: rgb(186, 119, 173);
+}
+
+.genre {
+  background-color: transparent;
+  border: 1px solid purple;
+  border-radius: 2px;
+  color: purple;
+  cursor: pointer;
+}
+.Sci-fiBtn {
+  background-color: transparent;
+  border: 1px solid purple;
+  border-radius: 5px;
+  color: rgb(152, 5, 152);
+  cursor: pointer;
+  padding: 5px;
+}
