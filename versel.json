@@ -1,9 +1,9 @@
 {
   "routes": [
-    { "src": "/", "dest": "/" },
-    { "src": "/login", "dest": "/" },
-    { "src": "/categories", "dest": "/" },
-    { "src": "/bookmark", "dest": "/" },
-    { "src": "/filmView", "dest": "/" }
+    { "src": "/", "dest": "/dist/index.html" },
+    { "src": "/login", "dest": "/dist/index.html" },
+    { "src": "/categories", "dest": "/dist/index.html" },
+    { "src": "/bookmark", "dest": "/dist/index.html" },
+    { "src": "/filmView", "dest": "/dist/index.html" }
   ]
 }
