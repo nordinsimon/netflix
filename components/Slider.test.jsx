@@ -1,6 +1,5 @@
 import { test, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
-//import userEvent from "@testing-library/user-event";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { AllContextProvider } from "../src/context/context";
 import { MemoryRouter } from "react-router-dom";
 
@@ -81,12 +80,14 @@ test("test that movies show when Slider renders", () => {
   expect(movies).to.exist;
 });
 
-/* test.only("Test that name apperas on hover", async () => {
+test("Test that movie info appears on hover", async () => {
   custumRender();
-  const movies = screen.getByRole("img", { alt: "Movie 0" });
-  console.log("MOVIES", movies);
 
-  // await userEvent.hover(movie);
-  //await screen.findByText(testMovies[0].title);
+  const allMovieImages = screen.getAllByRole("img", { name: /Movie \d+/ });
+  const movie = allMovieImages[0]; // gets the first movie image
+
+  fireEvent.mouseOver(movie);
+
+  const movieInfo = await screen.findByText(testMovies[0].title);
+  expect(movieInfo).toBeInTheDocument();
 });
- */
