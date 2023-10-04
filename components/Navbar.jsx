@@ -17,7 +17,7 @@ const Navbar = () => {
     return <SearchBar setSearching={setSearching} />;
   }
   return (
-    <div id="nav">
+    <div data-testId="nav" id="nav">
       <ul id="left">
         <li onClick={() => navigate("/")}>Home</li>
         <li onClick={() => navigate("/categories")}>Categories</li>

@@ -10,7 +10,7 @@ const HomePage = () => {
     useContext(AllContext);
 
   return (
-    <div id="homepage">
+    <div data-testId="homepage" id="homepage">
       <Navbar />
       <Trending
         movies={movies}
