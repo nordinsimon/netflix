@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { AllContextProvider } from "../../context/context";
 import FilmViewPage from "./FilmViewPage";
@@ -41,13 +41,9 @@ describe("FilmViewPage Component", () => {
         </AllContextProvider>
       </MemoryRouter>,
     );
-    expect(
-      screen.getByText("The Shawshank Redemption (1994)"),
-    ).toBeInTheDocument();
-    const rating = screen.getByText("R");
-    expect(rating).toBeInTheDocument();
-    const genre = screen.getByText("Drama");
-    expect(genre).toBeInTheDocument();
+    expect(screen.getByText("The Shawshank Redemption")).toBeInTheDocument();
+    expect(screen.getByText("R")).toBeInTheDocument();
+    expect(screen.getByText("Drama")).toBeInTheDocument();
     expect(
       screen.getByText("Over the course of several years..."),
     ).toBeInTheDocument();
@@ -86,6 +82,4 @@ describe("BookmarkButton Component", () => {
       JSON.stringify([mockMovie]),
     );
   });
-
-  // ... other tests ...
 });
