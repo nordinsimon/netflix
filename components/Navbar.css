@@ -22,7 +22,7 @@ li {
 
 #right {
   display: inline-flex;
-  margin-right: 10%;
+  margin-right: 20%;
 }
 
 #circle {
@@ -47,6 +47,27 @@ li {
   background-position: center;
 }
 
+#categoryCircle {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(91, 91, 91);
+  background-image: url("../src/assets/icons8-menu-24.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+#homeCircle {
+  width: 25px;
+  height: 25px;
+  border-radius: 15px;
+  background-color: rgb(91, 91, 91);
+  background-image: url("../src/assets/icons8-home-48.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+}
+
 #bookmark {
   width: 25px;
   height: 25px;
@@ -64,8 +85,12 @@ li {
   transform: translateX(7px);
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 370px) {
   #right {
-    margin-right: 20px;
+    margin-right: 20%;
+    margin-left: -20px;
+  }
+  #left {
+    margin-left: -20px;
   }
 }

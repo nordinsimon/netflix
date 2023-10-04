@@ -1,13 +1,26 @@
 import logout from "../src/auth/logout";
 import "./Navbar.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 
 const Navbar = () => {
   const [searching, setSearching] = useState(false);
+  const [screen, setScreen] = useState(window.innerWidth);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const updateScreenWidth = () => {
+      setScreen(window.innerWidth);
+    };
+
+    window.addEventListener("resize", updateScreenWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenWidth);
+    };
+  }, []);
 
   const isOnBookmarksPage = location.pathname === "/bookmark";
   const svgFill = isOnBookmarksPage ? "red" : "none";
@@ -17,10 +30,14 @@ const Navbar = () => {
     return <SearchBar setSearching={setSearching} />;
   }
   return (
-    <div id="nav">
+    <div data-testId="nav" id="nav">
       <ul id="left">
-        <li onClick={() => navigate("/")}>Home</li>
-        <li onClick={() => navigate("/categories")}>Categories</li>
+        <li onClick={() => navigate("/")}>
+          {screen < 420 ? <div id="homeCircle"></div> : "Home"}
+        </li>
+        <li onClick={() => navigate("/categories")}>
+          {screen < 420 ? <div id="categoryCircle"></div> : "Category"}
+        </li>
       </ul>
       <ul id="right">
         <li id="bookmark" onClick={() => navigate("/bookmark")}>

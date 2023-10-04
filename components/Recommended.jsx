@@ -29,7 +29,7 @@ const Recommended = ({ movies }) => {
   }, [movies]);
 
   return (
-    <div>
+    <div data-testid="recommended-section">
       <h4>Recommended</h4>
       <Slider filmsToMap={recommended} />
     </div>
