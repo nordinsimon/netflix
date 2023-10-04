@@ -44,7 +44,7 @@ describe("FilmViewPage Component", () => {
     expect(
       screen.getByText("The Shawshank Redemption (1994)"),
     ).toBeInTheDocument();
-    const ratingElement = screen.getByText(/Rating:/).closest("p");
+    const ratingElement = screen.getByText(/R/).closest("p");
     expect(within(ratingElement).getByText("R")).toBeInTheDocument();
     const genreElement = screen.getByText(/Genre:/).closest("p");
     expect(within(genreElement).getByText("Drama")).toBeInTheDocument();
