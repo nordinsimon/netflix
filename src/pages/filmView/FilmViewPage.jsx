@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import AllContext from "../../context/context";
-import "./filmViewPage.css";
+import "./FilmViewPage.css";
 import Navbar from "../../../components/Navbar";
 
 import BookmarkButton from "../../../components/BookmarkButton";
