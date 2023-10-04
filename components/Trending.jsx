@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Slider from "./Slider";
 
-const Trending = ({ movies,...props }) => {
+const Trending = ({ movies }) => {
   let trendingMovies = movies.filter(
     (movie) => movie.isTrending === true && movie.thumbnail !== undefined,
   );
@@ -17,7 +17,7 @@ const Trending = ({ movies,...props }) => {
   }, [movies]);
 
   return (
-    <div {...props}>
+    <div data-testid="trending-section">
       <h4>Trending</h4>
       <Slider filmsToMap={trending} />
     </div>
