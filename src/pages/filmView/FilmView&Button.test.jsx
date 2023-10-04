@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, within } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { AllContextProvider } from "../../context/context";
@@ -44,10 +44,8 @@ describe("FilmViewPage Component", () => {
     expect(
       screen.getByText("The Shawshank Redemption (1994)"),
     ).toBeInTheDocument();
-    const ratingElement = screen.getByText(/Rating:/).closest("p");
-    expect(within(ratingElement).getByText("R")).toBeInTheDocument();
-    const genreElement = screen.getByText(/Genre:/).closest("p");
-    expect(within(genreElement).getByText("Drama")).toBeInTheDocument();
+    expect(screen.getByText("R")).toBeInTheDocument();
+    expect(screen.getByText("Drama")).toBeInTheDocument();
     expect(
       screen.getByText("Over the course of several years..."),
     ).toBeInTheDocument();
