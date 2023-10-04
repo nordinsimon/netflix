@@ -1,3 +1,9 @@
 {
-  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+  "routes": [
+    { "src": "/", "dest": "/" },
+    { "src": "/login", "dest": "/" },
+    { "src": "/categories", "dest": "/" },
+    { "src": "/bookmark", "dest": "/" },
+    { "src": "/filmView", "dest": "/" }
+  ]
 }
