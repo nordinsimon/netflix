@@ -30,7 +30,7 @@ const Navbar = () => {
     return <SearchBar setSearching={setSearching} />;
   }
   return (
-    <div data-testId="nav" id="nav">
+    <div data-testid="nav" id="nav">
       <ul id="left">
         <li onClick={() => navigate("/")}>
           {screen < 420 ? <div id="homeCircle"></div> : "Home"}
