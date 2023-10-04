@@ -29,5 +29,5 @@ const loginTestFunction = async () => {
 test("that category button exists", async () => {
   await loginTestFunction();
   const category = screen.getByText("Category");
-  expect(category).to.exist;
+  expect(category).toBeInTheDocument();
 });

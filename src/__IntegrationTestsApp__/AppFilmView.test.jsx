@@ -39,22 +39,22 @@ test("that filmViewPage is working", async () => {
   const movieHeader = screen.getByText(
     "The Lord of the Rings: The Return of the King",
   );
-  expect(movieHeader).to.exist;
+  expect(movieHeader).toBeInTheDocument();
 
   const bookmarkButton = screen.getByRole("button", { name: "Bookmark" });
   await userEvent.click(bookmarkButton);
   const bookmarkedButton = screen.getByRole("button", {
     name: "Unbookmark",
   });
-  expect(bookmarkedButton).to.exist;
+  expect(bookmarkedButton).toBeInTheDocument();
 
   const homeButton = screen.getByText("Home");
   await userEvent.click(homeButton);
   const movies = screen.getAllByRole("img", { name: "Movie 0" });
   const movie0 = movies[0];
-  expect(movie0).to.exist;
+  expect(movie0).toBeInTheDocument();
   await userEvent.click(movie0);
 
   const movieHeader2 = screen.getByText("The Godfather: Part II");
-  expect(movieHeader2).to.exist;
+  expect(movieHeader2).toBeInTheDocument();
 });

@@ -81,7 +81,10 @@ const Slider = ({ filmsToMap }) => {
             />
             {hover === movieIndex && (
               <div className="movieInfo">
-                <div onClick={() => handleBookmark(movie)}>
+                <div
+                  data-testid={"bookmarkFilm"}
+                  onClick={() => handleBookmark(movie)}
+                >
                   <svg
                     id="lager-1"
                     data-name="Lager 2"
