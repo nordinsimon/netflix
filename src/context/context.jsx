@@ -14,7 +14,7 @@ export const AllContextProvider = ({ children }) => {
     setMovies(file);
 
     const localBookmarks = localStorage.getItem("bookmarks");
-    if (localBookmarks) {
+    if (localBookmarks && Array.isArray(JSON.parse(localBookmarks))) {
       setBookmarks(JSON.parse(localBookmarks));
     }
 
