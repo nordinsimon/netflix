@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, within } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import { BrowserRouter as Router } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { AllContextProvider } from "../../context/context";
 import FilmViewPage from "./FilmViewPage";
 import BookmarkButton from "../../../components/BookmarkButton";
@@ -35,11 +35,11 @@ describe("FilmViewPage Component", () => {
 
   it("it renders correctly with given movie", () => {
     render(
-      <Router>
+      <MemoryRouter>
         <AllContextProvider>
           <FilmViewPage />
         </AllContextProvider>
-      </Router>,
+      </MemoryRouter>,
     );
     expect(
       screen.getByText("The Shawshank Redemption (1994)"),
