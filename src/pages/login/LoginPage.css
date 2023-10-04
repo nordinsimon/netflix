@@ -41,3 +41,9 @@ input:focus {
   height: 30px;
   margin-top: 50px;
 }
+
+@media screen and (max-width: 801) {
+  input {
+    margin-left: 1%;
+  }
+}

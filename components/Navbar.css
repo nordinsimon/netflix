@@ -22,7 +22,7 @@ li {
 
 #right {
   display: inline-flex;
-  margin-right: 10%;
+  margin-right: 20%;
 }
 
 #circle {
@@ -88,9 +88,9 @@ li {
 @media screen and (max-width: 370px) {
   #right {
     margin-right: 20%;
-    margin-left: -40px;
+    margin-left: -20px;
   }
   #left {
-    margin-left: -30px;
+    margin-left: -20px;
   }
 }
