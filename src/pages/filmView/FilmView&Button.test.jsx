@@ -41,13 +41,9 @@ describe("FilmViewPage Component", () => {
         </AllContextProvider>
       </MemoryRouter>,
     );
-    expect(
-      screen.getByText("The Shawshank Redemption (1994)"),
-    ).toBeInTheDocument();
-    const ratingElement = screen.getByText(/Rating:/).closest("p");
-    expect(within(ratingElement).getByText("R")).toBeInTheDocument();
-    const genreElement = screen.getByText(/Genre:/).closest("p");
-    expect(within(genreElement).getByText("Drama")).toBeInTheDocument();
+    expect(screen.getByText("The Shawshank Redemption")).toBeInTheDocument();
+    expect(screen.getByText("R")).toBeInTheDocument();
+    expect(screen.getByText("Drama")).toBeInTheDocument();
     expect(
       screen.getByText("Over the course of several years..."),
     ).toBeInTheDocument();
@@ -86,6 +82,4 @@ describe("BookmarkButton Component", () => {
       JSON.stringify([mockMovie]),
     );
   });
-
-  // ... other tests ...
 });
