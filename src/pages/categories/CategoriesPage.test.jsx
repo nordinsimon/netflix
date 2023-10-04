@@ -4,7 +4,6 @@ import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
 import { AllContextProvider } from "../../context/context";
 
-// import App from "../../../App.jsx";
 import CategoriesPage from "./CategoriesPage";
 
 const customRender = () => {
