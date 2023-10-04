@@ -1,9 +1,8 @@
 {
-  "routes": [
-    { "src": "/", "dest": "/dist/index.html" },
-    { "src": "/login", "dest": "/dist/index.html" },
-    { "src": "/categories", "dest": "/dist/index.html" },
-    { "src": "/bookmark", "dest": "/dist/index.html" },
-    { "src": "/filmView", "dest": "/dist/index.html" }
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
