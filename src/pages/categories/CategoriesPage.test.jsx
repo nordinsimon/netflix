@@ -1,4 +1,4 @@
-/*import { test, expect } from "vitest";
+import { test, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AllContextProvider } from "../../context/context";
@@ -30,8 +30,8 @@ test("test that all categories show when CategoriesPage renders", () => {
       "Mystery",
       "Music",
       "Horror",
-      "lsdkllö" //varför?
-    )
+      "lsdkllö", //varför?
+    ),
   ).to.exist;
 });
 
@@ -39,7 +39,7 @@ test("test that movies show when CategoriesPage renders", () => {
   render(
     <AllContextProvider>
       <CategoriesPage />
-    </AllContextProvider>
+    </AllContextProvider>,
   );
   const movies = [
     { title: "Shawshank" },
@@ -56,7 +56,7 @@ test("that movie: Casablanca shows when Category: War is clicked on", async () =
   render(
     <AllContextProvider>
       <CategoriesPage />
-    </AllContextProvider>
+    </AllContextProvider>,
   );
   const user = userEvent.setup();
   const warBtn = screen.getByText("War");
@@ -64,4 +64,4 @@ test("that movie: Casablanca shows when Category: War is clicked on", async () =
   const movie = { title: "Casablanca" };
 
   expect(movie.title).toBeInTheDocument();
-});*/
+});
