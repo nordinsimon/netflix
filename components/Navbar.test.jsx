@@ -14,14 +14,14 @@ const customRender = () => {
   );
 };
 
-test("home-button", async () => {
+test("home-button", () => {
   customRender();
   const homeBtn = screen.getByText("Home");
   expect(homeBtn).toBeInTheDocument;
 });
 
-test("categories-button", async () => {
+test("categories-button", () => {
   customRender();
-  const categoriesBtn = screen.getByText("Categories");
-  expect(categoriesBtn).toBeInTheDocument;
+  const categoryBtn = screen.getByText("Category");
+  expect(categoryBtn).toBeInTheDocument;
 });

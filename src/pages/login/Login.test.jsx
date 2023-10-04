@@ -15,7 +15,7 @@ const custumRender = () => {
 
 test("Check if there is a Login Page", () => {
   custumRender();
-  const header = screen.getByText("Netflix Login");
+  const header = screen.getByText("Welcome back!");
   expect(header).toBeInTheDocument();
 });
 
