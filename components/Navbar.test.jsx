@@ -14,13 +14,13 @@ const customRender = () => {
   );
 };
 
-test("home-button", () => {
+test("that Home-button exist in Navbar", () => {
   customRender();
   const homeBtn = screen.getByText("Home");
   expect(homeBtn).toBeInTheDocument;
 });
 
-test("categories-button", () => {
+test("that categories-button exist in Navbar", () => {
   customRender();
   const categoryBtn = screen.getByText("Category");
   expect(categoryBtn).toBeInTheDocument;
