@@ -40,7 +40,7 @@ const FilmViewPage = () => {
       <div id="genres">
         <h5 id={checkRating(activeMovie.rating)}>{activeMovie.rating}</h5>
         {genres.map((genre, index) => (
-          <h6 key={index} className="genre">
+          <h6 key={index} className="genreFilm">
             {genre}
           </h6>
         ))}

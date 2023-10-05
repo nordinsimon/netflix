@@ -28,16 +28,18 @@ export const LoginPage = () => {
   };
 
   return (
-    <div className="container">
-      <h2>Welcome back!</h2>
+    <div>
+      <h2 id="welcome">Welcome back!</h2>
       <div className="input-container">
         <input
+          className="loginPage"
           type="text"
           placeholder="Username"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
         <input
+          className="loginPage"
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
