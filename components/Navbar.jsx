@@ -1,10 +1,11 @@
-import logout from "../src/auth/logout";
 import "./Navbar.css";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import SearchBar from "./SearchBar";
+import AllContext from "../src/context/context";
 
 const Navbar = () => {
+  const { logout } = useContext(AllContext);
   const [searching, setSearching] = useState(false);
   const [screen, setScreen] = useState(window.innerWidth);
   const location = useLocation();

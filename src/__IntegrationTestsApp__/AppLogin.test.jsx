@@ -57,4 +57,11 @@ test("that it is possible to login", async () => {
   const recommended = screen.getByText("Recommended");
   expect(trending).toBeInTheDocument();
   expect(recommended).toBeInTheDocument();
+
+  const logoutButton = screen.getByTestId("logout");
+  expect(logoutButton).toBeInTheDocument();
+  await userEvent.click(logoutButton);
+
+  const header = screen.getByText("Welcome back!");
+  expect(header).toBeInTheDocument();
 });

@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
-import login from "../../auth/login";
+import AllContext from "../../context/context";
 
 import "./LoginPage.css";
 
 export const LoginPage = () => {
+  const { login } = useContext(AllContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [unathorised, setUnathorised] = useState(false);
