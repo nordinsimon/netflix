@@ -30,7 +30,7 @@ test.skip("that category button exists, takes you to CategoryPage. When Category
   await loginTestFunction();
   const category = screen.getByText("Category");
 
-  expect(category).to.exist; //Skippa testID?
+  expect(category).toBeInTheDocument;
 
   await userEvent.click(category);
   const allMovies = screen.getByText("All Movies");
@@ -40,6 +40,6 @@ test.skip("that category button exists, takes you to CategoryPage. When Category
   await userEvent.click(dramaBtn);
   const dramaMovies = screen.getByText("Movies in Drama");
   expect(dramaMovies).toBeInTheDocument();
-  const movie = screen.getByAltText("Movie 0");
+  const movie = screen.getByRole("img", { name: "The Shawshank Redemption" });
   expect(movie).toBeInTheDocument();
 });
