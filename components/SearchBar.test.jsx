@@ -33,14 +33,14 @@ test("input-field and search-button", async () => {
   await user.type(input, "Gladiator");
   await user.click(searchBtn);
 
-  expect(movie.title).to.exist;
+  expect(movie.title).to.exist; //Ändra
 });
 
 test("close-button", async () => {
   customRender();
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
-  const closeBtn = screen.getByText("Close");
+  const closeBtn = screen.getByText("X");
 
   expect(input).toBeInTheDocument;
   expect(closeBtn).toBeInTheDocument;

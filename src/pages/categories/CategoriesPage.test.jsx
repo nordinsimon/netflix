@@ -18,13 +18,13 @@ const customRender = () => {
 
 test("test that heading: Categories show when the CategoriesPage renders", () => {
   customRender();
-  expect(screen.getAllByText("Categories")).to.exist;
+  expect(screen.getAllByText("Categories")).to.exist; //Ändraget get by text
 });
 
 test("test that all buttons: categories show when CategoriesPage renders", () => {
   customRender();
   const buttons = screen.getAllByRole("button");
-  expect(buttons.length).toBe(15);
+  expect(buttons.length).toBe(15); // tohavelength 15
 });
 
 test("test that movies show when CategoriesPage renders", () => {
@@ -46,7 +46,7 @@ test("that movie: Casablanca shows when Category: War is clicked on", async () =
   await user.click(warBtn);
   const movie = { title: "Casablanca" };
 
-  expect(movie.title).to.exist;
+  expect(movie.title).to.exist; //Ändra
 });
 
 test("that movie: Casablanca shows when Category: War is clicked on and is not shown when Category: Fantasy is clicked on", async () => {
@@ -57,7 +57,7 @@ test("that movie: Casablanca shows when Category: War is clicked on and is not s
   const movie = { title: "Casablanca" };
 
   await user.click(warBtn);
-  expect(movie.title).to.exist;
+  expect(movie.title).to.exist; //Ändra
 
   await user.click(fantasyBtn);
   expect(movie.title).not.toBeInTheDocument;

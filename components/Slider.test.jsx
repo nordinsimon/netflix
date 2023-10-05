@@ -64,7 +64,7 @@ const testMovies = [
   },
 ];
 
-const custumRender = () => {
+const customRender = () => {
   return render(
     <AllContextProvider>
       <MemoryRouter>
@@ -75,18 +75,19 @@ const custumRender = () => {
 };
 
 test("test that movies show when Slider renders", () => {
-  custumRender();
+  customRender();
   const movies = screen.getAllByRole("img");
   expect(movies).to.exist;
 });
 
 test("Test that movie info appears on hover", async () => {
-  custumRender();
+  // KOlla längden på arrayen
+  customRender();
 
   const allMovieImages = screen.getAllByRole("img", { name: /Movie \d+/ });
   const movie = allMovieImages[0]; // gets the first movie image
 
-  fireEvent.mouseOver(movie);
+  fireEvent.mouseOver(movie); //USER EVENT
 
   const movieInfo = await screen.findByText(testMovies[0].title);
   expect(movieInfo).toBeInTheDocument();
