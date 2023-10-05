@@ -50,10 +50,9 @@ test("that filmViewPage is working", async () => {
 
   const homeButton = screen.getByText("Home");
   await userEvent.click(homeButton);
-  const movies = screen.getAllByRole("img", { name: "Movie 0" });
-  const movie0 = movies[0];
-  expect(movie0).toBeInTheDocument();
-  await userEvent.click(movie0);
+  const movie = screen.getByRole("img", { name: "The Godfather: Part II" });
+  expect(movie).toBeInTheDocument();
+  await userEvent.click(movie);
 
   const movieHeader2 = screen.getByText("The Godfather: Part II");
   expect(movieHeader2).toBeInTheDocument();
