@@ -26,7 +26,7 @@ const loginTestFunction = async () => {
   await userEvent.click(button);
 };
 
-test.skip("that category button exists, takes you to CategoryPage. When Category: drama is clicked on text: Movies in Drama and first movie-img renders.", async () => {
+test("that category button exists, takes you to CategoryPage. When Category: drama is clicked on text: Movies in Drama and first movie-img renders.", async () => {
   await loginTestFunction();
   const category = screen.getByText("Category");
 
