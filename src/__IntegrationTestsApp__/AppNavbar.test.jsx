@@ -31,37 +31,37 @@ test("that navbar Is Working", async () => {
 
   //Bookmark
   const bookmarkButton = screen.getByTestId("bookmarkButton");
-  expect(bookmarkButton).to.exist;
+  expect(bookmarkButton).toBeInTheDocument();
   await userEvent.click(bookmarkButton);
   const bookmarkHeader = screen.getByText("Bookmarked Movies");
-  expect(bookmarkHeader).to.exist;
+  expect(bookmarkHeader).toBeInTheDocument();
 
   //Category
   const Category = screen.getByText("Category");
-  expect(Category).to.exist;
+  expect(Category).toBeInTheDocument();
   await userEvent.click(Category);
   const categoryHeader = screen.getByText("All Movies");
-  expect(categoryHeader).to.exist;
+  expect(categoryHeader).toBeInTheDocument();
 
   //Home
   const homeButton = screen.getByText("Home");
-  expect(homeButton).to.exist;
+  expect(homeButton).toBeInTheDocument();
   await userEvent.click(homeButton);
   const trending = screen.getByText("Trending");
-  expect(trending).to.exist;
+  expect(trending).toBeInTheDocument();
 
   //Search
   const searchButton = screen.getByTestId("search");
-  expect(searchButton).to.exist;
+  expect(searchButton).toBeInTheDocument();
   await userEvent.click(searchButton);
   const searchInput = screen.getByPlaceholderText("Search for movies");
-  expect(searchInput).to.exist;
+  expect(searchInput).toBeInTheDocument();
 
   const closeSearch = screen.getByRole("button", { name: "Close" });
-  expect(closeSearch).to.exist;
+  expect(closeSearch).toBeInTheDocument();
   await userEvent.click(closeSearch);
 
   //Logout
   const logoutButton = screen.getByTestId("logout");
-  expect(logoutButton).to.exist;
+  expect(logoutButton).toBeInTheDocument();
 });

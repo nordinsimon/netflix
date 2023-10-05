@@ -23,9 +23,9 @@ const loginTestFunction = async () => {
   const password = screen.getByPlaceholderText("Password");
   const button = screen.getByRole("button");
 
-  expect(header).to.exist;
-  expect(username).to.exist;
-  expect(password).to.exist;
+  expect(header).toBeInTheDocument();
+  expect(username).toBeInTheDocument();
+  expect(password).toBeInTheDocument();
 
   await userEvent.type(username, "Simon");
   await userEvent.type(password, "123");
@@ -39,22 +39,22 @@ test("that error massage is working when typing wrong username or password", asy
   const password = screen.getByPlaceholderText("Password");
   const button = screen.getByRole("button");
 
-  expect(header).to.exist;
-  expect(username).to.exist;
-  expect(password).to.exist;
+  expect(header).toBeInTheDocument();
+  expect(username).toBeInTheDocument();
+  expect(password).toBeInTheDocument();
 
   await userEvent.type(username, "Fel");
   await userEvent.type(password, "321");
   await userEvent.click(button);
 
   const error = screen.getByText("Wrong username or password");
-  expect(error).to.exist;
+  expect(error).toBeInTheDocument();
 });
 
 test("that it is possible to login", async () => {
   await loginTestFunction();
   const trending = screen.getByText("Trending");
   const recommended = screen.getByText("Recommended");
-  expect(trending).to.exist;
-  expect(recommended).to.exist;
+  expect(trending).toBeInTheDocument();
+  expect(recommended).toBeInTheDocument();
 });
