@@ -16,12 +16,12 @@ const customRender = () => {
   );
 };
 
-test("Trending component is rendered in HomePage", () => {
+test("that component: Trending is rendered in HomePage", () => {
   customRender();
   expect(screen.getByText("Trending")).toBeInTheDocument();
 });
 
-test("Recommended component is rendered in HomePage", () => {
+test("that component: Recommended is rendered in HomePage", () => {
   customRender();
   expect(screen.getByText("Recommended")).toBeInTheDocument();
 });

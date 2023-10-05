@@ -26,7 +26,7 @@ const loginTestFunction = async () => {
   await userEvent.click(button);
 };
 
-test("that category button exists, takes you to CategoryPage. When Category: drama is clicked on text: Movies in Drama and first movie-img renders.", async () => {
+test("that categories page is working and that the page renders the movies that belongs to the category user has clicked on.", async () => {
   await loginTestFunction();
   const category = screen.getByText("Category");
 
