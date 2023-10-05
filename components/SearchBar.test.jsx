@@ -40,7 +40,7 @@ test("close-button", async () => {
   customRender();
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
-  const closeBtn = screen.getByText("Close");
+  const closeBtn = screen.getByText("X");
 
   expect(input).toBeInTheDocument;
   expect(closeBtn).toBeInTheDocument;
