@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { beforeEach, afterEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, afterEach, describe, expect, it, vi, test } from "vitest";
 import { MemoryRouter } from "react-router-dom";
 import { AllContextProvider } from "../../context/context";
 import FilmViewPage from "./FilmViewPage";
@@ -33,8 +33,7 @@ describe("FilmViewPage Component", () => {
     });
   });
 
-  it(" renders correctly with given movie", () => {
-    // it eller test
+  test(" renders correctly with given movie", () => {
     render(
       <MemoryRouter>
         <AllContextProvider>
@@ -69,7 +68,7 @@ describe("BookmarkButton Component", () => {
     });
   });
 
-  it("it toggles bookmark status on click", () => {
+  test("it toggles bookmark status on click", () => {
     render(
       <AllContextProvider>
         <BookmarkButton movie={mockMovie} />
