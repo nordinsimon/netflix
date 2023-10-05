@@ -1,10 +1,8 @@
 import mockUsers from "./mockUsers.json";
 
 export const loginMock = ({ username, password }) => {
-  console.log("username", username);
-  console.log("password", password);
   const user = mockUsers.users.find(
-    (user) => user.name === username && user.password === password
+    (user) => user.name === username && user.password === password,
   );
   if (user) {
     return {
