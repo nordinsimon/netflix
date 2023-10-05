@@ -1,5 +1,6 @@
-import { render, screen, fireEvent } from "@testing-library/react";
-import { beforeEach, afterEach, describe, expect, it, vi, test } from "vitest";
+import { render, screen, waitFor } from "@testing-library/react";
+import { beforeEach, afterEach, describe, expect, vi, test } from "vitest";
+import userEvent from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
 import { AllContextProvider } from "../../context/context";
 import FilmViewPage from "./FilmViewPage";
@@ -68,7 +69,7 @@ describe("BookmarkButton Component", () => {
     });
   });
 
-  test("it toggles bookmark status on click", () => {
+  test("it toggles bookmark status on click", async () => {
     render(
       <AllContextProvider>
         <BookmarkButton movie={mockMovie} />
@@ -76,10 +77,13 @@ describe("BookmarkButton Component", () => {
     );
 
     const button = screen.getByRole("button", { name: /Bookmark/ });
-    fireEvent.click(button);
-    expect(localStorage.setItem).toHaveBeenCalledWith(
-      "bookmarks",
-      JSON.stringify([mockMovie]),
-    );
+    localStorage.setItem.mockClear();
+    userEvent.click(button);
+    await waitFor(() => {
+      expect(localStorage.setItem.mock.calls[0]).toEqual([
+        "bookmarks",
+        JSON.stringify([mockMovie]),
+      ]);
+    });
   });
 });
