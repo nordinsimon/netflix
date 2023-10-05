@@ -27,10 +27,16 @@
 }
 
 .genre {
-  background-color: transparent;
+  margin-right: 1%;
+  border: none;
+  border-radius: 5px;
   border: 1px solid purple;
-  border-radius: 2px;
-  color: purple;
+  padding: 5px;
+  color: rgb(161, 2, 161);
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: transparent;
   cursor: pointer;
 }
 .Sci-fiBtn {

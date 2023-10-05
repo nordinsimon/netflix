@@ -8,6 +8,7 @@
   padding: 20px;
   border: none;
   height: 100%;
+  border-radius: 20px;
 }
 
 /* Movie Title Styles */
@@ -16,6 +17,7 @@
   font-family: lato, sans-serif;
   font-weight: 300;
   font-style: normal;
+  text-align: center;
 }
 
 /* Image Styles */
@@ -109,7 +111,7 @@
   margin-left: 5%;
 }
 
-.genre {
+.genreFilm {
   display: inline-block;
   margin-right: 1%;
   border: none;
