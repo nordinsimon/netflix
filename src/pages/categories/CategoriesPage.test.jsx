@@ -21,13 +21,13 @@ test("test that heading: Categories show when the CategoriesPage renders", () =>
   expect(screen.getByText("Categories")).toBeInTheDocument();
 });
 
-test.skip("test that all buttons: categories show when CategoriesPage renders", () => {
+test("test that all buttons: categories show when CategoriesPage renders", () => {
   customRender();
   const buttons = screen.getAllByRole("button");
   expect(buttons).toHaveLength(15);
 });
 
-test.skip("that movie: Casablanca shows when Category: War is clicked on and is not shown when Category: Fantasy is clicked on", async () => {
+test("that movie: Casablanca shows when Category: War is clicked on and is not shown when Category: Fantasy is clicked on", async () => {
   customRender();
   const user = userEvent.setup();
   const warBtn = screen.getByText("War");
