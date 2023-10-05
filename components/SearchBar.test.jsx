@@ -20,7 +20,7 @@ const customRender = () => {
   );
 };
 
-test("input-field and search-button", async () => {
+test("that input-field and search-button exist in the SearchBar and that it is possible to type: Gladiator in the input-field", async () => {
   customRender();
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
@@ -36,7 +36,7 @@ test("input-field and search-button", async () => {
   expect(movie.title).toBeInTheDocument;
 });
 
-test("close-button", async () => {
+test("that close-button exist and operates in the SearchBar", async () => {
   customRender();
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
