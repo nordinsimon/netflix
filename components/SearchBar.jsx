@@ -40,20 +40,24 @@ const SearchBar = ({ setSearching }) => {
 
   return (
     <div className="searchBox">
-      <div className="title">
-        <h2>Search</h2>
-        <button onClick={() => setSearching(false)}>Close</button>
+      <div className="title"></div>
+      <div id="searchField">
+        <input
+          type="text"
+          placeholder="Search for movies"
+          onChange={(event) => setInput(event.target.value)}
+          value={input}
+          onKeyUp={handleKeyPress}
+        />
+        <button className="close" onClick={searchHandler}>
+          Search
+        </button>
+        <button id="close" onClick={() => setSearching(false)}>
+          X
+        </button>
+        {movieNotFound && <p>Movie not found</p>}
+        {tooShort && <p>Search must be at least 3 characters</p>}
       </div>
-      <input
-        type="text"
-        placeholder="Search for movies"
-        onChange={(event) => setInput(event.target.value)}
-        value={input}
-        onKeyUp={handleKeyPress}
-      />
-      <button onClick={searchHandler}>Search</button>
-      {movieNotFound && <p>Movie not found</p>}
-      {tooShort && <p>Search must be at least 3 characters</p>}
     </div>
   );
 };

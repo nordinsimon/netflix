@@ -5,3 +5,9 @@
   padding-bottom: 20px;
   background: linear-gradient(to right, #1a1a1a, rgb(44, 26, 48));
 }
+
+h4 {
+  font-family: "circe", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
