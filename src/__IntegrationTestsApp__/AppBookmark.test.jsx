@@ -39,11 +39,11 @@ test("that bookmark page is working", async () => {
 
   const homeButton = screen.getByText("Home");
   await userEvent.click(homeButton);
-  const movies = screen.getAllByRole("img", { name: "Movie 0" });
-  const movie0 = movies[0];
-  expect(movie0).toBeInTheDocument();
 
-  await userEvent.click(movie0);
+  const movie = screen.getByRole("img", { name: "The Godfather: Part II" });
+  expect(movie).toBeInTheDocument();
+
+  await userEvent.click(movie);
   const movieHeader = screen.getByText("The Godfather: Part II");
   expect(movieHeader).toBeInTheDocument();
 
@@ -54,24 +54,4 @@ test("that bookmark page is working", async () => {
   const bookmarkedMovie = screen.getByText("The Godfather: Part II");
   expect(bookmarkedMovie).toBeInTheDocument();
   expect(noMovies).not.toBeInTheDocument();
-
-  /*
-  await userEvent.hover(movie0);
-  const bookmark = a screen.getByTestId("bookmarkFilm");
-
-  await userEvent.click(bookmark);
-  await userEvent.unhover(movie0);
-
-  expect(noMovies).toBeInTheDocument();
-
-    await userEvent.hover(movie0);
-  const bookmark = screen.getByTestId("bookmarkFilm");
-
-  await userEvent.click(bookmark);
-  await userEvent.unhover(movie0);
-
-  await userEvent.click(bookmarkButton);
-  await waitFor(() => {
-    expect(bookmarkHeader).toBeInTheDocument();
-  }); */
 });
