@@ -41,7 +41,7 @@ const CategoriesPage = () => {
     <div className="homepage">
       <Navbar />
       <h4>Categories</h4>
-      {width < 1200 && (
+      {width < 750 && (
         <img
           id="genreBtn"
           onClick={() => setShowGenres(!showGenres)}
@@ -49,7 +49,7 @@ const CategoriesPage = () => {
         ></img>
       )}
       <div className="categories">
-        {width > 1200 && (
+        {width > 750 && (
           <ul className="category">
             {uniqueGenres.map((genre, index) => (
               <li className="genres" key={index}>

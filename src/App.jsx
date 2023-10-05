@@ -33,7 +33,7 @@ function App() {
       }
     };
     redirectIfNotAuthenticated();
-  }, [navigate, location.pathname]);
+  }, [navigate, location.pathname, authToken]);
   return (
     <>
       <Routes>

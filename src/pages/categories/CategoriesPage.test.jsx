@@ -39,7 +39,7 @@ test("test that movies show when CategoriesPage renders", () => {
   });
 });
 
-test.skip("that movie: Casablanca shows when Category: War is clicked on", async () => {
+test("that movie: Casablanca shows when Category: War is clicked on", async () => {
   customRender();
   const user = userEvent.setup();
   const warBtn = screen.getByText("War");
