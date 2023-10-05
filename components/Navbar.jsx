@@ -23,6 +23,11 @@ const Navbar = () => {
     };
   }, []);
 
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
+
   const isOnBookmarksPage = location.pathname === "/bookmark";
   const svgFill = isOnBookmarksPage ? "red" : "none";
   const svgStroke = isOnBookmarksPage ? "red" : "white";
@@ -67,7 +72,7 @@ const Navbar = () => {
         <li data-testid="search" onClick={() => setSearching(true)}>
           <div id="circle"></div>
         </li>
-        <li data-testid="logout" onClick={logout}>
+        <li data-testid="logout" onClick={handleLogout}>
           <div id="logoutCircle"></div>
         </li>
       </ul>
