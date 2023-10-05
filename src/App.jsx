@@ -5,18 +5,20 @@ import {
   useLocation,
   Navigate,
 } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 
 import LoginPage from "./pages/login/LoginPage";
 import HomePage from "./pages/home/HomePage";
 import CategoriesPage from "./pages/categories/CategoriesPage";
 import BookmarkPage from "./pages/bookmark/BookmarkPage";
 import FilmViewPage from "./pages/filmView/FilmViewPage";
-import authToken from "./auth/authToken";
+
+import AllContext from "./context/context";
 
 // import "./App.css";
 
 function App() {
+  const { authToken } = useContext(AllContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -31,7 +33,7 @@ function App() {
       }
     };
     redirectIfNotAuthenticated();
-  }, [navigate, location.pathname]);
+  }, [navigate, location.pathname, authToken]);
   return (
     <>
       <Routes>

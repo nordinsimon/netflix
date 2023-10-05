@@ -84,7 +84,7 @@ test("Test that movie info appears on hover", async () => {
   // KOlla längden på arrayen
   customRender();
 
-  const allMovieImages = screen.getAllByRole("img", { name: /Movie \d+/ });
+  const allMovieImages = screen.getAllByRole("img");
   const movie = allMovieImages[0]; // gets the first movie image
 
   fireEvent.mouseOver(movie); //USER EVENT

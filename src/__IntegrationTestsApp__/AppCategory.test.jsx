@@ -30,7 +30,7 @@ test("that category button exists, takes you to CategoryPage. When Category: dra
   await loginTestFunction();
   const category = screen.getByText("Category");
 
-  expect(category).to.exist; //to exist
+  expect(category).toBeInTheDocument;
 
   await userEvent.click(category);
   const allMovies = screen.getByText("All Movies");
@@ -40,6 +40,6 @@ test("that category button exists, takes you to CategoryPage. When Category: dra
   await userEvent.click(dramaBtn);
   const dramaMovies = screen.getByText("Movies in Drama");
   expect(dramaMovies).toBeInTheDocument();
-  const movie = screen.getByAltText("Movie 0");
+  const movie = screen.getByRole("img", { name: "The Shawshank Redemption" });
   expect(movie).toBeInTheDocument();
 });

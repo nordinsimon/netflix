@@ -51,10 +51,17 @@ test("that error massage is working when typing wrong username or password", asy
   expect(error).toBeInTheDocument();
 });
 
-test("that it is possible to login", async () => {
+test("that it is possible to login and logout", async () => {
   await loginTestFunction();
   const trending = screen.getByText("Trending");
   const recommended = screen.getByText("Recommended");
   expect(trending).toBeInTheDocument();
   expect(recommended).toBeInTheDocument();
+
+  const logoutButton = screen.getByTestId("logout");
+  expect(logoutButton).toBeInTheDocument();
+  await userEvent.click(logoutButton);
+
+  const header = screen.getByText("Welcome back!");
+  expect(header).toBeInTheDocument();
 });
