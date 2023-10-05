@@ -1,7 +1,7 @@
 .searchBox {
   margin: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: purple 1px solid;
+  border-bottom: #53c0da 1px solid;
 }
 
 .title {
@@ -32,8 +32,8 @@
 #close {
   border: none;
   border-radius: 5px;
-  border: 1px solid purple;
-  color: rgb(161, 2, 161);
+  border: 1px solid #53c0da;
+  color: #53c0da;
   font-family: "circe", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -45,8 +45,8 @@
 .close {
   border: none;
   border-radius: 5px;
-  border: 1px solid purple;
-  color: rgb(161, 2, 161);
+  border: 1px solid #53c0da;
+  color: #53c0da;
   font-family: "circe", sans-serif;
   font-weight: 300;
   font-style: normal;
@@ -57,12 +57,12 @@
 
 .close:hover {
   cursor: pointer;
-  background-color: purple;
+  background-color: #53c0da;
   color: black;
 }
 
 #close:hover {
-  background-color: purple;
+  background-color: #53c0da;
   color: black;
 }
 
@@ -81,8 +81,8 @@
   margin-right: 1%;
   height: 30px;
   border-radius: 20px;
-  border: none;
-  background-color: rgb(74, 35, 74);
+  border: 1px solid #53c0da;
+  background-color: transparent;
   padding-left: 10px;
 }
 
