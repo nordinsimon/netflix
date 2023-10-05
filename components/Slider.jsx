@@ -94,6 +94,11 @@ const Slider = ({ filmsToMap }) => {
               className="movie"
               src={movie.thumbnail}
               alt={movie.title}
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src =
+                  "https://via.placeholder.com/380x562.png?text=No+Thumbnail+Available";
+              }}
               onClick={() => pickMovie(movie)}
             />
             {hover === movieIndex && (

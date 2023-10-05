@@ -26,7 +26,7 @@ const loginTestFunction = async () => {
   await userEvent.click(button);
 };
 
-test("that filmViewPage is working", async () => {
+test("that filmview page is working, that the movie searched for renders, that bookmarking works from filmview page and that movies render when user click on home-button", async () => {
   await loginTestFunction();
 
   const searchOpen = screen.getByTestId("search");

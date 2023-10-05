@@ -26,7 +26,7 @@ const loginTestFunction = async () => {
   await userEvent.click(button);
 };
 
-test("that navbar Is Working", async () => {
+test("that navbar is working. Bookmark button takes user to bookmark page. Category button takes user to category page and home button takes user to home page. Searchfunction exist and can be closed. Log out exist. ", async () => {
   await loginTestFunction();
 
   //Bookmark

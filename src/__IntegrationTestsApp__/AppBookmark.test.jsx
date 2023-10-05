@@ -26,7 +26,7 @@ const loginTestFunction = async () => {
   await userEvent.click(button);
 };
 
-test("that bookmark page is working", async () => {
+test("that bookmark page is working and that a user can bookmark a movie", async () => {
   await loginTestFunction();
   const bookmarkButton = screen.getByTestId("bookmarkButton");
   expect(bookmarkButton).toBeInTheDocument();
