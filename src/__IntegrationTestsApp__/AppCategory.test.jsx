@@ -6,7 +6,7 @@ import { MemoryRouter } from "react-router-dom";
 
 import App from "../App";
 
-const custumRender = () => {
+const customRender = () => {
   return render(
     <AllContextProvider>
       <MemoryRouter>
@@ -17,17 +17,29 @@ const custumRender = () => {
 };
 
 const loginTestFunction = async () => {
-  custumRender();
+  customRender();
   const username = screen.getByPlaceholderText("Username");
   const password = screen.getByPlaceholderText("Password");
   const button = screen.getByRole("button");
-  await userEvent.type(username, "Simon");
+  await userEvent.type(username, "Björn");
   await userEvent.type(password, "123");
   await userEvent.click(button);
 };
 
-test("that category button exists", async () => {
+test("that category button exists, takes you to CategoryPage. When Category: drama is clicked on text: Movies in Drama and first movie-img renders.", async () => {
   await loginTestFunction();
   const category = screen.getByText("Category");
-  expect(category).toBeInTheDocument();
+
+  expect(category).to.exist;
+
+  await userEvent.click(category);
+  const allMovies = screen.getByText("All Movies");
+  expect(allMovies).toBeInTheDocument();
+
+  const dramaBtn = screen.getByRole("button", { name: "Drama" });
+  await userEvent.click(dramaBtn);
+  const dramaMovies = screen.getByText("Movies in Drama");
+  expect(dramaMovies).toBeInTheDocument();
+  const movie = screen.getByAltText("Movie 0");
+  expect(movie).toBeInTheDocument();
 });
