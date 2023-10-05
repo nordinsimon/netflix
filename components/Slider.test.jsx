@@ -80,7 +80,7 @@ test("test that movies show when Slider renders", () => {
   expect(movies).to.exist;
 });
 
-test.skip("Test that movie info appears on hover", async () => {
+test("Test that movie info appears on hover", async () => {
   // KOlla längden på arrayen
   customRender();
 
