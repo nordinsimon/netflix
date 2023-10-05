@@ -79,6 +79,24 @@ h6 {
 
 @media screen and (max-width: 325px) {
   .movie {
+    height: 30vh;
+  }
+  .carousel {
+    height: 30vh;
+  }
+  .movieInfo {
+    width: 20vh;
+  }
+  h6 {
+    font-size: 9px;
+  }
+  .movieInfo {
+    height: 50;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .movie {
     height: 20vh;
   }
   .carousel {
