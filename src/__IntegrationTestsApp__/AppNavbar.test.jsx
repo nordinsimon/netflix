@@ -57,7 +57,7 @@ test("that navbar Is Working", async () => {
   const searchInput = screen.getByPlaceholderText("Search for movies");
   expect(searchInput).toBeInTheDocument();
 
-  const closeSearch = screen.getByRole("button", { name: "Close" });
+  const closeSearch = screen.getByRole("button", { name: "X" });
   expect(closeSearch).toBeInTheDocument();
   await userEvent.click(closeSearch);
 
