@@ -1,8 +1,8 @@
 import { test, expect } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { AllContextProvider } from "../src/context/context";
 import { MemoryRouter } from "react-router-dom";
-
+import userEvent from "@testing-library/user-event";
 import Slider from "./Slider";
 
 const testMovies = [
@@ -81,14 +81,24 @@ test("test that movies show when Slider renders", () => {
 });
 
 test("Test that movie info appears on hover", async () => {
-  // KOlla längden på arrayen
   customRender();
 
-  const allMovieImages = screen.getAllByRole("img");
-  const movie = allMovieImages[0]; // gets the first movie image
+  // Get the first movie by its alt text
+  const movie = screen.getByAltText(testMovies[0].title);
 
-  fireEvent.mouseOver(movie); //USER EVENT
+  userEvent.hover(movie);
 
-  const movieInfo = await screen.findByText(testMovies[0].title);
-  expect(movieInfo).toBeInTheDocument();
+  await waitFor(() => {
+    expect(screen.getByText(testMovies[0].title)).toBeInTheDocument();
+  });
+});
+
+test("renders correct number of movies", () => {
+  customRender();
+
+  const allMovieImages = testMovies.map((movie) => {
+    return screen.getByAltText(new RegExp(movie.title, "i"));
+  });
+
+  expect(allMovieImages).toHaveLength(testMovies.length);
 });
