@@ -33,7 +33,7 @@ test("input-field and search-button", async () => {
   await user.type(input, "Gladiator");
   await user.click(searchBtn);
 
-  expect(movie.title).to.exist;
+  expect(movie.title).to.exist; //Ändra
 });
 
 test("close-button", async () => {

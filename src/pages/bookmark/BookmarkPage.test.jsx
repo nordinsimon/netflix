@@ -16,7 +16,7 @@ const customRender = () => {
 
 test("that text: Bookmarked Movies, show when page renders", () => {
   customRender();
-  expect(screen.getByText("Bookmarked Movies")).to.exist;
+  expect(screen.getByText("Bookmarked Movies")).to.exist; //Ändra
 });
 
 test("that the text: You have not bookmarked any movies yet, show when the page renders", () => {

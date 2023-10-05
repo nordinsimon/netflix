@@ -30,7 +30,7 @@ test("that category button exists, takes you to CategoryPage. When Category: dra
   await loginTestFunction();
   const category = screen.getByText("Category");
 
-  expect(category).to.exist;
+  expect(category).to.exist; //to exist
 
   await userEvent.click(category);
   const allMovies = screen.getByText("All Movies");

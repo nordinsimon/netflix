@@ -18,10 +18,11 @@ const customRender = () => {
 
 test("HomePage renders without crashing", () => {
   customRender();
-  expect(screen.getByTestId("homepage")).toBeTruthy();
+  expect(screen.getByTestId("homepage")).toBeTruthy(); //Ta bort test ID
 });
 
 test("Navbar component is rendered in HomePage", () => {
+  // Ta bort test id
   customRender();
   expect(screen.getByTestId("nav")).toBeInTheDocument();
 });
