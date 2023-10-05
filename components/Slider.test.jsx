@@ -1,5 +1,5 @@
 import { test, expect } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { AllContextProvider } from "../src/context/context";
 import { MemoryRouter } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
@@ -101,4 +101,32 @@ test("renders correct number of movies", () => {
   });
 
   expect(allMovieImages).toHaveLength(testMovies.length);
+});
+
+// De andra testerna har jag lyckats konvertera till userEvent istället för fireEvent däremot gick det inte på denna, jag vet inte om det kan vara för att knappen man trycker på är en image och inte en button. Men med fireEvent funkar det // Maximus
+
+test("the first movie moves to the last position after clicking next button", () => {
+  customRender();
+
+  const movieTitles = testMovies.map((movie) => movie.title);
+  let allMovieImages = screen
+    .getAllByRole("img")
+    .filter((img) => movieTitles.includes(img.alt));
+
+  // console.log("före click", allMovieImages); for testing purposes the difference between fireEvent and userEvent
+  expect(allMovieImages[0]).toHaveAttribute("alt", "12 Angry Men");
+
+  const nextButton = screen.getByRole("img", { name: /nextImage/i });
+  fireEvent.click(nextButton);
+
+  allMovieImages = screen
+    .getAllByRole("img")
+    .filter((img) => movieTitles.includes(img.alt));
+
+  // console.log("efter click", allMovieImages); for testing purposes the difference between fireEvent and userEvent - different arrays?
+
+  expect(allMovieImages[allMovieImages.length - 1]).toHaveAttribute(
+    "alt",
+    "12 Angry Men",
+  );
 });

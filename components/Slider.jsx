@@ -153,6 +153,7 @@ const Slider = ({ filmsToMap }) => {
         }
         onClick={() => nextSlide()}
         src={next}
+        alt="nextImage"
       ></img>
     </div>
   );
