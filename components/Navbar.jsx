@@ -40,7 +40,11 @@ const Navbar = () => {
         </li>
       </ul>
       <ul id="right">
-        <li id="bookmark" onClick={() => navigate("/bookmark")}>
+        <li
+          data-testid="bookmarkButton"
+          id="bookmark"
+          onClick={() => navigate("/bookmark")}
+        >
           <div id="bookmarkcontainer">
             <svg
               id="lager-1"
@@ -59,10 +63,10 @@ const Navbar = () => {
             </svg>
           </div>
         </li>
-        <li onClick={() => setSearching(true)}>
+        <li data-testid="search" onClick={() => setSearching(true)}>
           <div id="circle"></div>
         </li>
-        <li onClick={logout}>
+        <li data-testid="logout" onClick={logout}>
           <div id="logoutCircle"></div>
         </li>
       </ul>
