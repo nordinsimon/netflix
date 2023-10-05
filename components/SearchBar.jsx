@@ -7,21 +7,29 @@ const SearchBar = ({ setSearching }) => {
   const { movies, setActiveMovie } = useContext(AllContext);
   const [input, setInput] = useState("");
   const [movieNotFound, setMovieNotFound] = useState(null);
+  const [tooShort, setTooShort] = useState(false);
 
   const navigate = useNavigate();
 
   const searchHandler = () => {
-    const filteredMovies = movies.filter((movie) =>
-      movie.title.toLowerCase().includes(input.toLowerCase()),
-    );
-    if (filteredMovies.length === 0) {
-      setMovieNotFound(true);
+    if (input === "" || input === " " || input.length < 3) {
+      setTooShort(true);
       return;
+    } else {
+      const filteredMovies = movies.filter((movie) =>
+        movie.title.toLowerCase().includes(input.toLowerCase()),
+      );
+      if (filteredMovies.length === 0) {
+        setTooShort(false);
+        setMovieNotFound(true);
+        return;
+      }
+      setActiveMovie(filteredMovies[0]);
+      setTooShort(false);
+      setSearching(false);
+      setMovieNotFound(false);
+      navigate("/filmView");
     }
-    setActiveMovie(filteredMovies[0]);
-    setSearching(false);
-    setMovieNotFound(false);
-    navigate("/filmView");
   };
 
   const handleKeyPress = (event) => {
@@ -41,13 +49,9 @@ const SearchBar = ({ setSearching }) => {
           value={input}
           onKeyUp={handleKeyPress}
         />
-        <button className="close" onClick={searchHandler}>
-          Search
-        </button>
-        <button id="close" onClick={() => setSearching(false)}>
-          X
-        </button>
+        <button onClick={searchHandler}>Search</button>
         {movieNotFound && <p>Movie not found</p>}
+        {tooShort && <p>Search must be at least 3 characters</p>}
       </div>
     </div>
   );
