@@ -93,7 +93,7 @@ const Slider = ({ filmsToMap }) => {
             <img
               className="movie"
               src={movie.thumbnail}
-              alt={`Movie ${movieIndex}`}
+              alt={`Movie ${movieIndex}`} //MOVIE NAME
               onClick={() => pickMovie(movie)}
             />
             {hover === movieIndex && (

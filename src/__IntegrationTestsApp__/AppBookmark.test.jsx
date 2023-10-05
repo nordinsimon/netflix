@@ -57,7 +57,7 @@ test("that bookmark page is working", async () => {
 
   /*
   await userEvent.hover(movie0);
-  const bookmark = screen.getByTestId("bookmarkFilm");
+  const bookmark = a screen.getByTestId("bookmarkFilm");
 
   await userEvent.click(bookmark);
   await userEvent.unhover(movie0);

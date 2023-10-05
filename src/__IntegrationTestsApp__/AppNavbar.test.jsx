@@ -30,7 +30,7 @@ test("that navbar Is Working", async () => {
   await loginTestFunction();
 
   //Bookmark
-  const bookmarkButton = screen.getByTestId("bookmarkButton");
+  const bookmarkButton = screen.getByTestId("bookmarkButton"); //Skippa testID?
   expect(bookmarkButton).toBeInTheDocument();
   await userEvent.click(bookmarkButton);
   const bookmarkHeader = screen.getByText("Bookmarked Movies");
@@ -51,7 +51,7 @@ test("that navbar Is Working", async () => {
   expect(trending).toBeInTheDocument();
 
   //Search
-  const searchButton = screen.getByTestId("search");
+  const searchButton = screen.getByTestId("search"); //Skippa testID?
   expect(searchButton).toBeInTheDocument();
   await userEvent.click(searchButton);
   const searchInput = screen.getByPlaceholderText("Search for movies");
