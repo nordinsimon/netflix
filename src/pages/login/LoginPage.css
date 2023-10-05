@@ -10,7 +10,7 @@
   font-family: "circe", sans-serif;
   font-weight: 700;
   font-style: italic;
-  color: rgb(148, 0, 148);
+  color: #53c0da;
 }
 
 .loginPage {
@@ -19,7 +19,7 @@
   border: none;
   width: 40vw;
   margin-left: 25%;
-  border-bottom: 1px solid purple;
+  border-bottom: 1px solid #53c0da;
   font-size: 1rem;
   background-color: transparent;
 }
@@ -34,9 +34,9 @@
   height: 30px;
   margin-top: 100px;
   background-color: transparent;
-  border: 1px solid purple;
+  border: 1px solid #53c0da;
   border-radius: 2px;
-  color: purple;
+  color: #53c0da;
   cursor: pointer;
   font-family: "circe", sans-serif;
   font-weight: 300;
@@ -44,7 +44,7 @@
 }
 
 #loginBtn:hover {
-  background-color: purple;
+  background-color: #53c0da;
   color: black;
 }
 

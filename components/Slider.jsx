@@ -11,6 +11,7 @@ const Slider = ({ filmsToMap }) => {
   const [index, setIndex] = useState(0);
   const [hover, setHover] = useState(null);
   const length = filmsToMap.length;
+  const [width, setWidth] = useState(window.innerWidth);
 
   const navigate = useNavigate();
 
@@ -21,6 +22,18 @@ const Slider = ({ filmsToMap }) => {
       setIndex(0);
     }
   }, [index, length]);
+
+  useEffect(() => {
+    const updateScreenWidth = () => {
+      setWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", updateScreenWidth);
+
+    return () => {
+      window.removeEventListener("resize", updateScreenWidth);
+    };
+  }, []);
 
   const nextSlide = () => {
     setIndex((index + 1) % length);
@@ -58,7 +71,11 @@ const Slider = ({ filmsToMap }) => {
   return (
     <div className="what">
       <img
-        style={{ width: "auto", height: "100%", marginTop: 100 }}
+        style={
+          width < 370
+            ? { width: "auto", height: "30px", marginTop: 100 }
+            : { width: "auto", height: "100%", marginTop: 100 }
+        }
         onClick={() => prevSlide()}
         src={next}
         className="nextic"
@@ -124,7 +141,11 @@ const Slider = ({ filmsToMap }) => {
         ))}
       </ul>
       <img
-        style={{ width: "auto", height: "100%", marginTop: 100 }}
+        style={
+          width < 370
+            ? { width: "auto", height: "30px", marginTop: 100 }
+            : { width: "auto", height: "100%", marginTop: 100 }
+        }
         onClick={() => nextSlide()}
         src={next}
       ></img>
