@@ -15,25 +15,25 @@ const custumRender = () => {
   );
 };
 
-test("Check if there is a Login Page", () => {
+test("that there is a Login Page", () => {
   custumRender();
   const header = screen.getByText("Welcome back!");
   expect(header).toBeInTheDocument();
 });
 
-test("Check if there is a input for username", () => {
+test("that there is an input for username", () => {
   custumRender();
   const input = screen.getByPlaceholderText("Username");
   expect(input).toBeInTheDocument();
 });
 
-test("Check if there is a input for password", () => {
+test("that there is an input for password", () => {
   custumRender();
   const input = screen.getByPlaceholderText("Password");
   expect(input).toBeInTheDocument();
 });
 
-test("Check if there is a button to Login", () => {
+test("that there is a Login button", () => {
   custumRender();
   const button = screen.getByRole("button");
   expect(button).toBeInTheDocument();
