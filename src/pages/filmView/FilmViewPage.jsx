@@ -18,7 +18,15 @@ const FilmViewPage = () => {
         <h2>{activeMovie.title}</h2>
         <h6 className="year">{activeMovie.year}</h6>
       </div>
-      <img src={activeMovie.thumbnail} alt={`${activeMovie.title} Thumbnail`} />
+      <img
+        src={activeMovie.thumbnail}
+        alt={`${activeMovie.title} Thumbnail`}
+        onError={(e) => {
+          e.target.onerror = null;
+          e.target.src =
+            "https://via.placeholder.com/380x562.png?text=No+Thumbnail+Available";
+        }}
+      />
       <div id="bookmarkBtn">
         <BookmarkButton movie={activeMovie} />
       </div>

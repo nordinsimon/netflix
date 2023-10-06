@@ -9,6 +9,7 @@
 
 .bookmark-button.bookmarked {
   background-color: #00ff00; /* Green for Bookmarked */
+  color: black;
 }
 
 .bookmark-button:hover {
@@ -17,4 +18,5 @@
 
 .bookmark-button.bookmarked:hover {
   background-color: #7fff7f; /* Lighter Green for hover on Bookmarked */
+  color: black;
 }
