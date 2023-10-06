@@ -14,7 +14,6 @@ export const AllContextProvider = ({ children }) => {
 
   const logout = async () => {
     removeCookie("token");
-    window.location.reload();
   };
 
   const login = (name, password) => {
