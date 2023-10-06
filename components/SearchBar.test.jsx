@@ -24,7 +24,7 @@ test("that input-field and search-button exist in the SearchBar and that it is p
   customRender();
   const user = userEvent.setup();
   const input = screen.getByRole("textbox");
-  const searchBtn = screen.getByRole("button", { name: "Search" });
+  const searchBtn = screen.getByTestId("search");
   const movie = { title: "Gladiator" };
 
   expect(searchBtn).toBeInTheDocument;

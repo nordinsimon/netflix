@@ -112,3 +112,30 @@ h6 {
     height: 50;
   }
 }
+
+.ratingPG {
+  color: orange;
+  font-family: "circe", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.ratingR {
+  color: red;
+  font-family: "circe", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ratingPG13 {
+  color: #53c0da;
+  font-family: "circe", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noRating {
+  color: grey;
+  font-family: "circe", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

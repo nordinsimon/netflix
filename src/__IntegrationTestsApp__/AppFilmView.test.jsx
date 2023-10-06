@@ -34,7 +34,7 @@ test("that filmview page is working, that the movie searched for renders, that b
 
   const searchInput = screen.getByPlaceholderText("Search for movies");
   await userEvent.type(searchInput, "Lord");
-  const searchButton = screen.getByRole("button", { name: "Search" });
+  const searchButton = screen.getByTestId("search");
   await userEvent.click(searchButton);
   const movieHeader = screen.getByText(
     "The Lord of the Rings: The Return of the King",

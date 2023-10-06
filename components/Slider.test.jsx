@@ -130,3 +130,13 @@ test("the first movie moves to the last position after clicking next button", ()
     "12 Angry Men",
   );
 });
+
+test("checks bookmark icon exist", async () => {
+  customRender();
+  const user = userEvent.setup();
+  const movie = screen.getByAltText(testMovies[0].title);
+  await user.hover(movie);
+  const bookmarkButton = await screen.findByTestId("bookmarkFilm");
+  expect(bookmarkButton).toBeInTheDocument();
+  expect(bookmarkButton).toHaveAttribute("stroke", "white");
+});

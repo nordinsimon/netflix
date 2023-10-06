@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import next from "../src/assets/next.png";
 
 import AllContext from "../src/context/context";
-
+import { checkRating } from "./checkRatingFunc";
 import "./Slider.css";
 
 const Slider = ({ filmsToMap }) => {
@@ -103,10 +103,7 @@ const Slider = ({ filmsToMap }) => {
             />
             {hover === movieIndex && (
               <div className="movieInfo">
-                <div
-                  data-testid={"bookmarkFilm"}
-                  onClick={() => handleBookmark(movie)}
-                >
+                <div onClick={() => handleBookmark(movie)}>
                   <svg
                     id="lager-1"
                     data-name="Lager 2"
@@ -117,6 +114,7 @@ const Slider = ({ filmsToMap }) => {
                   >
                     <path
                       className={"cls-1"}
+                      data-testid="bookmarkFilm"
                       fill={
                         bookmarks.some(
                           (bookmark) => bookmark.title === movie.title,
@@ -136,7 +134,10 @@ const Slider = ({ filmsToMap }) => {
                   </svg>
                 </div>
                 <h6>
-                  {movie.year} {movie.rating}
+                  {movie.year}{" "}
+                  <span className={checkRating(movie.rating)}>
+                    {movie.rating}
+                  </span>
                 </h6>
                 <h5>{movie.title}</h5>
                 <h6>{movie.genre}</h6>

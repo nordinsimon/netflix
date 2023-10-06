@@ -49,9 +49,11 @@ const SearchBar = ({ setSearching }) => {
           value={input}
           onKeyUp={handleKeyPress}
         />
-        <button className="close" onClick={searchHandler}>
-          Search
-        </button>
+        <button
+          className="close"
+          data-testid="search"
+          onClick={searchHandler}
+        ></button>
         <button id="close" onClick={() => setSearching(false)}>
           X
         </button>

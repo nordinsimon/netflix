@@ -40,3 +40,20 @@ test("that movie: Casablanca shows when Category: War is clicked on and is not s
   await user.click(fantasyBtn);
   expect(movie.title).not.toBeInTheDocument;
 });
+
+test("category icon works when screen is smaller", async () => {
+  window.innerWidth = 500;
+  render(
+    <MemoryRouter>
+      <AllContextProvider>
+        <CategoriesPage />
+      </AllContextProvider>
+    </MemoryRouter>,
+  );
+  const user = userEvent.setup();
+  const categoryBtn = screen.getByTestId("showGenres");
+  expect(categoryBtn).toBeInTheDocument();
+  await user.click(categoryBtn);
+  const genre = await screen.findByText("Drama");
+  expect(genre).toBeInTheDocument();
+});
