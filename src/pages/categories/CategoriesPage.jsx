@@ -44,6 +44,7 @@ const CategoriesPage = () => {
       {width < 750 && (
         <img
           id="genreBtn"
+          data-testid="showGenres"
           onClick={() => setShowGenres(!showGenres)}
           src={cateogoryIcon}
         ></img>

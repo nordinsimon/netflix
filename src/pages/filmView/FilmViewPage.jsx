@@ -2,7 +2,7 @@ import { useContext } from "react";
 import AllContext from "../../context/context";
 import "./FilmViewPage.css";
 import Navbar from "../../../components/Navbar";
-
+import { checkRating } from "../../../components/checkRatingFunc";
 import BookmarkButton from "../../../components/BookmarkButton";
 
 const FilmViewPage = () => {
@@ -11,23 +11,8 @@ const FilmViewPage = () => {
   const genres =
     typeof activeMovie.genre === "string" ? activeMovie.genre.split(",") : [];
 
-  const checkRating = (rating) => {
-    switch (rating) {
-      case "PG":
-        return "ratingPG";
-      case "G":
-        return "ratingG";
-      case "PG-13":
-        return "ratingPG13";
-      case "R":
-        return "ratingR";
-      default:
-        return "noRating";
-    }
-  };
-
   return (
-    <div className="container">
+    <div className="containerFilm">
       <Navbar />
       <div>
         <h2>{activeMovie.title}</h2>

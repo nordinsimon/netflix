@@ -1,18 +1,21 @@
 @import url("https://use.typekit.net/dqq4keq.css");
 
-.container {
+.containerFilm {
   background: linear-gradient(to right, #1a1a1a, rgb(44, 26, 48));
   color: #e0e0e0;
-  width: 40vw;
+  width: 30vw;
   margin: auto;
-  padding: 20px;
+  padding-right: 21px;
+  padding-left: 21px;
+  padding-bottom: 15px;
+  padding-top: 10px;
   border: none;
   height: 100%;
   border-radius: 20px;
 }
 
 /* Movie Title Styles */
-.container h2 {
+.containerFilm h2 {
   margin-bottom: 20px;
   font-family: lato, sans-serif;
   font-weight: 300;
@@ -21,7 +24,7 @@
 }
 
 /* Image Styles */
-.container img {
+.containerFilm img {
   max-width: 100%;
   max-height: 40vh;
   display: block;
@@ -30,7 +33,7 @@
 }
 
 /* Paragraph Styles */
-.container p {
+.containerFilm p {
   margin-bottom: 10px;
   /*width: 35vw;*/
   margin-left: 5%;
@@ -38,13 +41,13 @@
 }
 
 /* Actor List Styles */
-.container .actors {
+.containerFilm .actors {
   list-style-type: none;
   padding: 0;
   margin-left: 5%;
 }
 
-.container .actors li {
+.containerFilm .actors li {
   display: inline-block;
   margin-right: 10px;
   font-family: "circe", sans-serif;
@@ -55,10 +58,10 @@
 }
 
 @media screen and (max-width: 800px) {
-  .container {
+  .containerFilm {
     width: 80vw;
   }
-  .container p {
+  .containerFilm p {
     width: 70vw;
   }
 }
@@ -68,6 +71,7 @@
   padding: 4px;
   margin-right: 1%;
   border-radius: 5px;
+  transform: translateY(2px);
   border: none;
   background-color: orange;
   color: black;
@@ -77,6 +81,7 @@
   border: none;
   padding: 4px;
   margin-right: 1%;
+  transform: translateY(2px);
   border-radius: 5px;
   border: none;
   background-color: red;
@@ -87,6 +92,7 @@
 #ratingPG13 {
   border: none;
   padding: 4px;
+  transform: translateY(2px);
   margin-right: 1%;
   border-radius: 5px;
   border: none;
@@ -101,6 +107,7 @@
   margin-right: 1%;
   border-radius: 5px;
   border: none;
+  transform: translateY(2px);
   background-color: grey;
   color: black;
   display: inline-block;
@@ -153,19 +160,21 @@
   #noRating {
     margin-right: 3%;
   }
-  .container {
-    margin-right: 30%;
+  .containerFilm {
+    width: 72vw;
+    margin-right: 10%;
+    margin-left: -2%;
   }
 }
 
-.container p {
+.containerFilm p {
   font-family: "circe", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
 
 @media screen and (max-width: 284px) {
-  .container h2 {
+  .containerFilm h2 {
     font-size: 18px;
   }
 }

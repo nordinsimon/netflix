@@ -52,4 +52,8 @@
   #loginBtn {
     margin-left: 30%;
   }
+  .loginPage {
+    width: 80vw;
+    margin-left: -2%;
+  }
 }
