@@ -154,6 +154,7 @@ const Slider = ({ filmsToMap }) => {
         }
         onClick={() => nextSlide()}
         src={next}
+        className="prevIc"
         alt="nextImage"
       ></img>
     </div>
